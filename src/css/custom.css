@@ -1,0 +1,319 @@
+/**
+ * Agri-Content Developer Documentation
+ * Custom theme with agricultural green palette
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ─── Light Mode ─── */
+:root {
+  --ifm-color-primary: #16a34a;
+  --ifm-color-primary-dark: #15803d;
+  --ifm-color-primary-darker: #166534;
+  --ifm-color-primary-darkest: #14532d;
+  --ifm-color-primary-light: #22c55e;
+  --ifm-color-primary-lighter: #4ade80;
+  --ifm-color-primary-lightest: #86efac;
+
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-semibold: 600;
+  --ifm-code-font-size: 90%;
+  --ifm-code-border-radius: 6px;
+  --ifm-global-radius: 8px;
+  --ifm-pre-border-radius: 10px;
+
+  --ifm-navbar-height: 64px;
+  --ifm-navbar-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+
+  --docusaurus-highlighted-code-line-bg: rgba(22, 163, 74, 0.1);
+
+  --agri-gradient-start: #16a34a;
+  --agri-gradient-end: #059669;
+  --agri-surface: #f0fdf4;
+  --agri-surface-hover: #dcfce7;
+  --agri-border: #bbf7d0;
+  --agri-text-muted: #6b7280;
+}
+
+/* ─── Dark Mode ─── */
+[data-theme='dark'] {
+  --ifm-color-primary: #4ade80;
+  --ifm-color-primary-dark: #22c55e;
+  --ifm-color-primary-darker: #16a34a;
+  --ifm-color-primary-darkest: #15803d;
+  --ifm-color-primary-light: #86efac;
+  --ifm-color-primary-lighter: #bbf7d0;
+  --ifm-color-primary-lightest: #dcfce7;
+
+  --ifm-background-color: #0a0f0d;
+  --ifm-background-surface-color: #111916;
+  --ifm-navbar-background-color: rgba(10, 15, 13, 0.85);
+
+  --docusaurus-highlighted-code-line-bg: rgba(74, 222, 128, 0.12);
+
+  --agri-gradient-start: #4ade80;
+  --agri-gradient-end: #34d399;
+  --agri-surface: rgba(74, 222, 128, 0.06);
+  --agri-surface-hover: rgba(74, 222, 128, 0.1);
+  --agri-border: rgba(74, 222, 128, 0.15);
+  --agri-text-muted: #9ca3af;
+}
+
+/* ─── Global ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Navbar ─── */
+.navbar {
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--agri-border);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* ─── Sidebar ─── */
+.menu__link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.menu__link--active {
+  background: var(--agri-surface);
+  border-left: 3px solid var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.menu__list-item-collapsible .menu__link {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  color: var(--agri-text-muted);
+}
+
+/* ─── Doc Content ─── */
+.markdown h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--agri-border);
+}
+
+.markdown h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+}
+
+/* ─── Code Blocks ─── */
+.prism-code {
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+div[class^='codeBlockTitle'] {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--agri-border);
+}
+
+code {
+  background: var(--agri-surface);
+  border: 1px solid var(--agri-border);
+  padding: 2px 6px;
+  font-size: 0.85em;
+}
+
+/* ─── Tables ─── */
+table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--agri-border);
+  font-size: 0.9rem;
+}
+
+table thead th {
+  background: var(--agri-surface);
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--agri-border);
+}
+
+table tbody td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--agri-border);
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table tbody tr:hover {
+  background: var(--agri-surface-hover);
+}
+
+/* ─── Admonitions ─── */
+.alert {
+  border-radius: 10px;
+  border-width: 1px;
+  border-left-width: 4px;
+}
+
+/* ─── HTTP Method Badges ─── */
+.badge--get,
+.badge--post,
+.badge--put,
+.badge--patch,
+.badge--delete {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-right: 8px;
+  line-height: 1.5;
+}
+
+.badge--get {
+  background: rgba(34, 197, 94, 0.12);
+  color: #16a34a;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge--post {
+  background: rgba(59, 130, 246, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.badge--put {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge--patch {
+  background: rgba(168, 85, 247, 0.12);
+  color: #9333ea;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge--delete {
+  background: rgba(239, 68, 68, 0.12);
+  color: #dc2626;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+[data-theme='dark'] .badge--get {
+  color: #4ade80;
+}
+[data-theme='dark'] .badge--post {
+  color: #60a5fa;
+}
+[data-theme='dark'] .badge--put {
+  color: #fbbf24;
+}
+[data-theme='dark'] .badge--patch {
+  color: #c084fc;
+}
+[data-theme='dark'] .badge--delete {
+  color: #f87171;
+}
+
+/* ─── Footer ─── */
+.footer {
+  border-top: 1px solid var(--agri-border);
+}
+
+.footer__title {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.footer__link-item {
+  font-size: 0.88rem;
+  font-weight: 400;
+}
+
+/* ─── Scrollbar (dark mode) ─── */
+[data-theme='dark'] ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb {
+  background: rgba(74, 222, 128, 0.2);
+  border-radius: 4px;
+}
+
+[data-theme='dark'] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 222, 128, 0.35);
+}
+
+/* ─── Animations ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.theme-doc-markdown {
+  animation: fadeInUp 0.4s ease-out;
+}
