@@ -92,58 +92,7 @@
   transform: translateY(-1px);
 }
 
-/* ─── Quick Links ─── */
-.quickLinks {
-  padding: 3rem 0;
-  border-bottom: 1px solid var(--agri-border);
-}
 
-.quickLinksGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.quickLinkCard {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 18px 20px;
-  border-radius: 12px;
-  border: 1px solid var(--agri-border);
-  background: var(--agri-surface);
-  text-decoration: none !important;
-  color: inherit !important;
-  transition: all 0.2s ease;
-}
-
-.quickLinkCard:hover {
-  border-color: var(--ifm-color-primary);
-  background: var(--agri-surface-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.quickLinkIcon {
-  font-size: 1.6rem;
-  flex-shrink: 0;
-}
-
-.quickLinkCard div {
-  display: flex;
-  flex-direction: column;
-}
-
-.quickLinkCard strong {
-  font-size: 0.92rem;
-  font-weight: 600;
-  margin-bottom: 2px;
-}
-
-.quickLinkCard span:last-child {
-  font-size: 0.8rem;
-  color: var(--agri-text-muted);
-}
 
 /* ─── Features Section ─── */
 .features {
@@ -228,9 +177,6 @@
     font-size: 2.2rem;
   }
 
-  .quickLinksGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media screen and (max-width: 768px) {
