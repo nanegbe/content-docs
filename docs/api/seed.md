@@ -4,6 +4,8 @@ title: Database Seeding
 description: API reference for seeding the database with initial or test data.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Database Seeding
 
 Seed the database with initial or test data for development and staging environments.
@@ -34,11 +36,14 @@ Triggers the database seeding process, populating the database with predefined s
 
 **Example:**
 
-```bash
-curl -X POST http://localhost:3000/api/v1/seed \
-  -H "Content-Type: application/json" \
-  -d '{}'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/seed"
+  urlBase="http://localhost:3000/api/v1"
+  body={{}}
+  showAuth={false}
+  label="RUN SEED"
+/>
 
 ### Response
 

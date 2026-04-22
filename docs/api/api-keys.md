@@ -4,6 +4,8 @@ title: API Keys
 description: API reference for creating and managing API keys for programmatic access.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # API Keys
 
 Generate and manage API keys for server-to-server and programmatic access to the E-Content API.
@@ -51,15 +53,15 @@ Generates a new API key for the authenticated user.
 
 **Example:**
 
-```bash
-curl -X POST https://api.e-Content.com/api/v1/api-key \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
-  -d '{
-    "name": "Production Server Key",
-    "description": "Used for production backend integration"
-  }'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/api-key"
+  body={{
+    name: "Production Server Key",
+    description: "Used for production backend integration"
+  }}
+  label="CREATE API KEY"
+/>
 
 ### Response
 
@@ -93,10 +95,12 @@ The `key` field containing the full API key value is returned **only once** at c
 
 Once you have an API key, include it in the `Authorization` header of your requests:
 
-```bash
-curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
-  -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxx"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/commodities"
+  token="sk_live_xxxxxxxxxxxxxx"
+  label="USE API KEY"
+/>
 
 ### Environment Variable Setup
 

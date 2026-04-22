@@ -4,6 +4,8 @@ title: Health Check
 description: API reference for checking the E-Content API service health status.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Health Check
 
 Monitor the operational status of the E-Content API service.
@@ -33,9 +35,12 @@ Returns the current health status of the API server. No authentication required.
 
 **Example:**
 
-```bash
-curl -X GET https://api.e-Content.com/api/v1/health
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/health"
+  showAuth={false}
+  label="CHECK HEALTH"
+/>
 
 ### Response
 

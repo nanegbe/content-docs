@@ -4,6 +4,8 @@ title: Payments
 description: API reference for initiating payments and processing transactions with Paystack.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Payments
 
 Process payments for subscription plans using the integrated Paystack payment gateway.
@@ -69,17 +71,17 @@ Creates a new payment transaction and returns a Paystack authorization URL for t
 
 **Example:**
 
-```bash
-curl -X POST https://api.e-Content.com/api/v1/payment \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -d '{
-    "planId": "p2b3c4d5-e6f7-8901-bcde-f12345678901",
-    "amount": 29.99,
-    "currency": "GHS",
-    "email": "user@example.com"
-  }'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/payment"
+  body={{
+    planId: "p2b3c4d5-e6f7-8901-bcde-f12345678901",
+    amount: 29.99,
+    currency: "GHS",
+    email: "user@example.com"
+  }}
+  label="INITIATE PAYMENT"
+/>
 
 ### Response
 

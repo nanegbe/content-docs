@@ -4,6 +4,8 @@ title: Commodities
 description: API reference for retrieving commodity market price data.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Commodities
 
 Access commodity market price data including crop prices, units, and market information. This is a core endpoint for delivering market intelligence to farmers.
@@ -43,10 +45,12 @@ Retrieves all available commodities with their current market prices.
 
 **Example:**
 
-```bash
-curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
-  -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxx"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/commodities"
+  token="sk_live_xxxxxxxxxxxxxx"
+  label="GET ALL COMMODITIES"
+/>
 
 ### Response
 

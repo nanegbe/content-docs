@@ -4,6 +4,8 @@ title: Overview
 description: Access real-time agricultural commodity market prices across regions and markets.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Market Price API
 
 Access real-time and historical commodity price data across agricultural markets. Help farmers make better selling decisions with accurate, up-to-date pricing intelligence.
@@ -23,10 +25,12 @@ Access real-time and historical commodity price data across agricultural markets
 
 Fetch all available commodity prices with a single API call:
 
-```bash
-curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/commodities"
+  token="YOUR_API_KEY"
+  label="GET COMMODITY PRICES"
+/>
 
 ```json title="Response — 200 OK"
 [

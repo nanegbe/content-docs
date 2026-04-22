@@ -4,6 +4,8 @@ title: Overview
 description: Deliver hyperlocal weather forecasts, alerts, and seasonal outlooks for agricultural planning.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Weather API
 
 Deliver localized weather forecasts, severe weather alerts, and seasonal outlooks to help farmers plan planting, irrigation, and harvesting activities.
@@ -24,10 +26,12 @@ Deliver localized weather forecasts, severe weather alerts, and seasonal outlook
 
 Fetch the current weather conditions for a location:
 
-```bash
-curl -X GET "https://api.e-Content.com/api/v1/dev/weather?lat=5.6037&lon=-0.1870" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/weather?lat=5.6037&lon=-0.1870"
+  token="YOUR_API_KEY"
+  label="GET CURRENT WEATHER"
+/>
 
 ```json title="Response — 200 OK"
 {
@@ -103,10 +107,12 @@ Returns a multi-day weather forecast for a given location.
 
 **Example:**
 
-```bash
-curl -X GET "https://api.e-Content.com/api/v1/dev/weather/forecast?lat=5.6037&lon=-0.1870&days=7" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/weather/forecast?lat=5.6037&lon=-0.1870&days=7"
+  token="YOUR_API_KEY"
+  label="GET WEATHER FORECAST"
+/>
 
 ```json title="Response — 200 OK"
 {
@@ -157,10 +163,12 @@ Returns active severe weather alerts for a location or region.
 
 **Example:**
 
-```bash
-curl -X GET "https://api.e-Content.com/api/v1/dev/weather/alerts?lat=5.6037&lon=-0.1870" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/weather/alerts?lat=5.6037&lon=-0.1870"
+  token="YOUR_API_KEY"
+  label="GET WEATHER ALERTS"
+/>
 
 ```json title="Response — 200 OK"
 {

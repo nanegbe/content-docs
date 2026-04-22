@@ -4,6 +4,8 @@ title: Quick Start
 description: Make your first E-Content API call in under 5 minutes.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Quick Start
 
 Get up and running with the E-Content API in under 5 minutes. This guide walks you through registration, authentication, and making your first API call.
@@ -17,24 +19,26 @@ Get up and running with the E-Content API in under 5 minutes. This guide walks y
 
 Create a new account by sending a `POST` request to the registration endpoint:
 
-```bash title="Register"
-curl -X POST https://api.e-Content.com/api/v1/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "developer@example.com",
-    "password": "securepassword",
-    "firstName": "Jane",
-    "lastName": "Doe",
-    "msisdn": "+233241234567",
-    "userCountry": "GH",
-    "industry": "Agriculture",
-    "organizationCountry": "GH",
-    "organizationName": "FarmTech Solutions",
-    "preferences": {
-      "language": "en"
+<ApiCodeToggler
+  method="POST"
+  endpoint="/auth/register"
+  body={{
+    email: "developer@example.com",
+    password: "securepassword",
+    firstName: "Jane",
+    lastName: "Doe",
+    msisdn: "+233241234567",
+    userCountry: "GH",
+    industry: "Agriculture",
+    organizationCountry: "GH",
+    organizationName: "FarmTech Solutions",
+    preferences: {
+      language: "en"
     }
-  }'
-```
+  }}
+  showAuth={false}
+  label="REGISTER"
+/>
 
 ```json title="Response — 201 Created"
 {
@@ -49,14 +53,16 @@ curl -X POST https://api.e-Content.com/api/v1/auth/register \
 
 Authenticate with your credentials to receive a JWT access token:
 
-```bash title="Login"
-curl -X POST https://api.e-Content.com/api/v1/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "developer@example.com",
-    "password": "securepassword"
-  }'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/auth/login"
+  body={{
+    email: "developer@example.com",
+    password: "securepassword"
+  }}
+  showAuth={false}
+  label="LOGIN"
+/>
 
 ```json title="Response — 200 OK"
 {
@@ -76,15 +82,15 @@ Store the `accessToken` — you'll need it for all authenticated requests. JWT t
 
 For server-to-server integrations, create a persistent API key:
 
-```bash title="Create API Key"
-curl -X POST https://api.e-Content.com/api/v1/api-key \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
-  -d '{
-    "name": "Production Key",
-    "description": "Used for production integration"
-  }'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/api-key"
+  body={{
+    name: "Production Key",
+    description: "Used for production integration"
+  }}
+  label="CREATE API KEY"
+/>
 
 ```json title="Response — 201 Created"
 {
@@ -103,10 +109,12 @@ The full API key is only shown **once** at creation time. Store it securely — 
 
 Now use your API key to query commodity market prices:
 
-```bash title="Get All Commodities"
-curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
-  -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxx"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/commodities"
+  token="sk_live_xxxxxxxxxxxxxx"
+  label="GET COMMODITIES"
+/>
 
 ```json title="Response — 200 OK"
 [
@@ -129,9 +137,12 @@ curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
 
 Verify the API is running with the health check endpoint (no auth required):
 
-```bash title="Health Check"
-curl -X GET https://api.e-Content.com/api/v1/health
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/health"
+  showAuth={false}
+  label="HEALTH CHECK"
+/>
 
 ```json title="Response — 200 OK"
 {

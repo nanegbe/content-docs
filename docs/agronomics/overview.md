@@ -4,6 +4,8 @@ title: Overview
 description: Deliver crop-specific agronomic advice, pest management tips, and best farming practices.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Agronomics API
 
 Deliver crop-specific guidance, pest and disease management recommendations, and best farming practices tailored to local conditions and seasonal contexts.
@@ -24,10 +26,12 @@ Deliver crop-specific guidance, pest and disease management recommendations, and
 
 Fetch agronomic advice for a specific crop:
 
-```bash
-curl -X GET "https://api.e-Content.com/api/v1/dev/agronomics?crop=maize&region=greater-accra" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/agronomics?crop=maize&region=greater-accra"
+  token="YOUR_API_KEY"
+  label="GET CROP ADVICE"
+/>
 
 ```json title="Response — 200 OK"
 {
@@ -107,10 +111,12 @@ Returns pest and disease identification with management recommendations.
 
 **Example:**
 
-```bash
-curl -X GET "https://api.e-Content.com/api/v1/dev/agronomics/pests?crop=maize&symptom=leaf-blight" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/agronomics/pests?crop=maize&symptom=leaf-blight"
+  token="YOUR_API_KEY"
+  label="GET PEST INFO"
+/>
 
 ```json title="Response — 200 OK"
 {
@@ -163,10 +169,12 @@ Returns a seasonal planting and activity calendar for a region.
 
 **Example:**
 
-```bash
-curl -X GET "https://api.e-Content.com/api/v1/dev/agronomics/calendar?region=greater-accra&year=2026" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/dev/agronomics/calendar?region=greater-accra&year=2026"
+  token="YOUR_API_KEY"
+  label="GET SEASONAL CALENDAR"
+/>
 
 ```json title="Response — 200 OK"
 {

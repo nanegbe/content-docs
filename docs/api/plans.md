@@ -4,6 +4,8 @@ title: Plans
 description: API reference for managing subscription plans — list, retrieve, and create plans.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Plans
 
 Manage subscription plans that determine user access levels and pricing tiers.
@@ -22,9 +24,12 @@ Retrieves a list of all available subscription plans. No authentication required
 
 **Example:**
 
-```bash
-curl -X GET https://api.e-Content.com/api/v1/plans
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/plans"
+  showAuth={false}
+  label="LIST ALL PLANS"
+/>
 
 ### Response
 
@@ -87,9 +92,12 @@ Retrieves the details of a specific plan by its unique ID.
 
 **Example:**
 
-```bash
-curl -X GET https://api.e-Content.com/api/v1/plans/p1a2b3c4-d5e6-7890-abcd-ef1234567890
-```
+<ApiCodeToggler
+  method="GET"
+  endpoint="/plans/p1a2b3c4-d5e6-7890-abcd-ef1234567890"
+  showAuth={false}
+  label="GET PLAN BY ID"
+/>
 
 ### Responses
 
@@ -147,15 +155,17 @@ This endpoint is typically restricted to admin users. Contact the platform team 
 
 **Example:**
 
-```bash
-curl -X POST https://api.e-Content.com/api/v1/plans \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Pro Plan",
-    "price": 29.99,
-    "description": "Access to all pro features"
-  }'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/plans"
+  body={{
+    name: "Pro Plan",
+    price: 29.99,
+    description: "Access to all pro features"
+  }}
+  showAuth={false}
+  label="CREATE PLAN"
+/>
 
 ### Response
 

@@ -4,6 +4,8 @@ title: Authentication
 description: API reference for authentication endpoints — login, register, and session validation.
 ---
 
+import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+
 # Authentication
 
 Manage user authentication, registration, and session validation.
@@ -44,24 +46,26 @@ Creates a new user account with complete profile information.
 
 **Example:**
 
-```bash
-curl -X POST https://api.e-Content.com/api/v1/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "newuser@example.com",
-    "password": "securepassword",
-    "firstName": "John",
-    "lastName": "Doe",
-    "msisdn": "+233241234567",
-    "userCountry": "GH",
-    "industry": "Agriculture",
-    "organizationCountry": "GH",
-    "organizationName": "Example Corp",
-    "preferences": {
-      "language": "en"
+<ApiCodeToggler
+  method="POST"
+  endpoint="/auth/register"
+  body={{
+    email: "newuser@example.com",
+    password: "securepassword",
+    firstName: "John",
+    lastName: "Doe",
+    msisdn: "+233241234567",
+    userCountry: "GH",
+    industry: "Agriculture",
+    organizationCountry: "GH",
+    organizationName: "Example Corp",
+    preferences: {
+      language: "en"
     }
-  }'
-```
+  }}
+  showAuth={false}
+  label="REGISTER USER"
+/>
 
 ### Responses
 
@@ -110,14 +114,16 @@ Authenticates a user with email and password. Returns a JWT access token on succ
 
 **Example:**
 
-```bash
-curl -X POST https://api.e-Content.com/api/v1/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{
-    "email": "user@example.com",
-    "password": "yourpassword"
-  }'
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/auth/login"
+  body={{
+    email: "user@example.com",
+    password: "yourpassword"
+  }}
+  showAuth={false}
+  label="USER LOGIN"
+/>
 
 ### Responses
 
@@ -161,11 +167,11 @@ Validates an existing user session. Use this to verify that a stored JWT token i
 
 **Example:**
 
-```bash
-curl -X POST https://api.e-Content.com/api/v1/auth/authenticate-user \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-```
+<ApiCodeToggler
+  method="POST"
+  endpoint="/auth/authenticate-user"
+  label="VALIDATE SESSION"
+/>
 
 ### Responses
 
