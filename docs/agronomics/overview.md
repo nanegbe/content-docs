@@ -5,6 +5,7 @@ description: Deliver crop-specific agronomic advice, pest management tips, and b
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Agronomics API
 
@@ -33,32 +34,33 @@ Fetch agronomic advice for a specific crop:
   label="GET CROP ADVICE"
 />
 
-```json title="Response — 200 OK"
-{
-  "crop": "Maize",
-  "region": "Greater Accra",
-  "season": "Major (March - July)",
-  "advice": {
-    "planting": {
-      "optimalPeriod": "March 15 - April 30",
-      "spacing": "75cm x 40cm",
-      "seedRate": "20-25 kg/ha",
-      "varieties": ["Obatanpa", "Mamaba", "Abontem"]
+<ApiResponse
+  title="200 OK"
+  data={{
+    crop: "Maize",
+    region: "Greater Accra",
+    season: "Major (March - July)",
+    advice: {
+      planting: {
+        optimalPeriod: "March 15 - April 30",
+        spacing: "75cm x 40cm",
+        seedRate: "20-25 kg/ha",
+        varieties: ["Obatanpa", "Mamaba", "Abontem"]
+      },
+      soilPrep: {
+        ploughingDepth: "15-20 cm",
+        soilType: "Well-drained loamy soil preferred",
+        phRange: "5.5 - 7.0"
+      },
+      fertilizer: {
+        basalApplication: "2 bags NPK 15-15-15 per acre at planting",
+        topDressing: "1.5 bags Sulphate of Ammonia per acre at 4 weeks",
+        foliar: "Optional micro-nutrient spray at tasselling stage"
+      }
     },
-    "soilPrep": {
-      "ploughingDepth": "15-20 cm",
-      "soilType": "Well-drained loamy soil preferred",
-      "phRange": "5.5 - 7.0"
-    },
-    "fertilizer": {
-      "basalApplication": "2 bags NPK 15-15-15 per acre at planting",
-      "topDressing": "1.5 bags Sulphate of Ammonia per acre at 4 weeks",
-      "foliar": "Optional micro-nutrient spray at tasselling stage"
-    }
-  },
-  "updatedAt": "2026-04-01T00:00:00.000Z"
-}
-```
+    updatedAt: "2026-04-01T00:00:00.000Z"
+  }}
+/>
 
 :::info Authentication Required
 Agronomics endpoints require API Key authentication. See the [Authentication guide](../getting-started/authentication) to set up your credentials.

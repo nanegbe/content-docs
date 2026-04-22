@@ -5,6 +5,7 @@ description: API reference for retrieving commodity market price data.
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Commodities
 
@@ -56,40 +57,41 @@ Retrieves all available commodities with their current market prices.
 
 **200 OK:**
 
-```json
-[
-  {
-    "id": "c1d2e3f4-a5b6-7890-cdef-123456789abc",
-    "name": "Maize",
-    "unit": "kg",
-    "price": 450.00
-  },
-  {
-    "id": "c2e3f4a5-b6c7-8901-defa-234567890bcd",
-    "name": "Rice (Local)",
-    "unit": "kg",
-    "price": 680.00
-  },
-  {
-    "id": "c3f4a5b6-c7d8-9012-efab-345678901cde",
-    "name": "Cassava",
-    "unit": "kg",
-    "price": 120.00
-  },
-  {
-    "id": "c4a5b6c7-d8e9-0123-fabc-456789012def",
-    "name": "Cocoa",
-    "unit": "kg",
-    "price": 2850.00
-  },
-  {
-    "id": "c5b6c7d8-e9f0-1234-abcd-567890123ef0",
-    "name": "Groundnuts",
-    "unit": "kg",
-    "price": 520.00
-  }
-]
-```
+<ApiResponse
+  title="200 OK"
+  data={[
+    {
+      id: "c1d2e3f4-a5b6-7890-cdef-123456789abc",
+      name: "Maize",
+      unit: "kg",
+      price: 450.00
+    },
+    {
+      id: "c2e3f4a5-b6c7-8901-defa-234567890bcd",
+      name: "Rice (Local)",
+      unit: "kg",
+      price: 680.00
+    },
+    {
+      id: "c3f4a5b6-c7d8-9012-efab-345678901cde",
+      name: "Cassava",
+      unit: "kg",
+      price: 120.00
+    },
+    {
+      id: "c4a5b6c7-d8e9-0123-fabc-456789012def",
+      name: "Cocoa",
+      unit: "kg",
+      price: 2850.00
+    },
+    {
+      id: "c5b6c7d8-e9f0-1234-abcd-567890123ef0",
+      name: "Groundnuts",
+      unit: "kg",
+      price: 520.00
+    }
+  ]}
+/>
 
 ### Response Fields
 

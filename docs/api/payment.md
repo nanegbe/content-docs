@@ -5,6 +5,7 @@ description: API reference for initiating payments and processing transactions w
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Payments
 
@@ -87,13 +88,14 @@ Creates a new payment transaction and returns a Paystack authorization URL for t
 
 **201 Created** — Payment transaction initiated:
 
-```json
-{
-  "reference": "pay_ref_abc123def456",
-  "authorizationUrl": "https://checkout.paystack.com/abc123def456",
-  "status": "pending"
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    reference: "pay_ref_abc123def456",
+    authorizationUrl: "https://checkout.paystack.com/abc123def456",
+    status: "pending"
+  }}
+/>
 
 ### Response Fields
 

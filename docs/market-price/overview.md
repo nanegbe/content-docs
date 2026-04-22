@@ -5,6 +5,7 @@ description: Access real-time agricultural commodity market prices across region
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Market Price API
 
@@ -32,28 +33,29 @@ Fetch all available commodity prices with a single API call:
   label="GET COMMODITY PRICES"
 />
 
-```json title="Response — 200 OK"
-[
-  {
-    "id": "c1d2e3f4-a5b6-7890-cdef-123456789abc",
-    "name": "Maize",
-    "unit": "kg",
-    "price": 450.00
-  },
-  {
-    "id": "c2e3f4a5-b6c7-8901-defa-234567890bcd",
-    "name": "Rice (Local)",
-    "unit": "kg",
-    "price": 680.00
-  },
-  {
-    "id": "c3f4a5b6-c7d8-9012-efab-345678901cde",
-    "name": "Cassava",
-    "unit": "kg",
-    "price": 120.00
-  }
-]
-```
+<ApiResponse
+  title="200 OK"
+  data={[
+    {
+      id: "c1d2e3f4-a5b6-7890-cdef-123456789abc",
+      name: "Maize",
+      unit: "kg",
+      price: 450.00
+    },
+    {
+      id: "c2e3f4a5-b6c7-8901-defa-234567890bcd",
+      name: "Rice (Local)",
+      unit: "kg",
+      price: 680.00
+    },
+    {
+      id: "c3f4a5b6-c7d8-9012-efab-345678901cde",
+      name: "Cassava",
+      unit: "kg",
+      price: 120.00
+    }
+  ]}
+/>
 
 :::info Authentication Required
 Market price endpoints require API Key authentication. See the [Authentication guide](../getting-started/authentication) to set up your credentials.

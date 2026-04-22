@@ -4,6 +4,8 @@ title: Introduction
 description: Overview of the E-Content API — market prices, weather updates, and agronomic advice for farmers.
 ---
 
+import ApiResponse from '@site/src/components/ApiResponse';
+
 # Introduction
 
 Welcome to the **E-Content API** — a comprehensive platform that delivers agricultural intelligence to farmers and agribusinesses through a simple, modern REST API.
@@ -64,21 +66,23 @@ The API supports two authentication methods:
 
 All API responses are returned as JSON. Successful responses contain the resource data directly, while error responses follow a consistent structure:
 
-```json title="Success Response"
-{
-  "id": "uuid",
-  "name": "Maize",
-  "unit": "kg",
-  "price": 450.00
-}
-```
+<ApiResponse
+  title="Success Response"
+  data={{
+    id: "uuid",
+    name: "Maize",
+    unit: "kg",
+    price: 450.00
+  }}
+/>
 
-```json title="Error Response"
-{
-  "statusCode": 401,
-  "message": "Invalid credentials"
-}
-```
+<ApiResponse
+  title="Error Response"
+  data={{
+    statusCode: 401,
+    message: "Invalid credentials"
+  }}
+/>
 
 ## Rate Limiting
 

@@ -5,6 +5,7 @@ description: API reference for managing subscription plans — list, retrieve, a
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Plans
 
@@ -35,44 +36,45 @@ Retrieves a list of all available subscription plans. No authentication required
 
 **200 OK:**
 
-```json
-[
-  {
-    "id": "p1a2b3c4-d5e6-7890-abcd-ef1234567890",
-    "name": "Basic",
-    "price": 9.99,
-    "features": [
-      "100 API calls/day",
-      "Market prices (delayed)",
-      "Basic weather data"
-    ]
-  },
-  {
-    "id": "p2b3c4d5-e6f7-8901-bcde-f12345678901",
-    "name": "Pro",
-    "price": 29.99,
-    "features": [
-      "5,000 API calls/day",
-      "Real-time market prices",
-      "Advanced weather forecasts",
-      "Agronomic advice"
-    ]
-  },
-  {
-    "id": "p3c4d5e6-f7a8-9012-cdef-234567890123",
-    "name": "Enterprise",
-    "price": 99.99,
-    "features": [
-      "Unlimited API calls",
-      "Real-time market prices",
-      "Advanced weather + alerts",
-      "Custom agronomic content",
-      "Priority support",
-      "Webhook integrations"
-    ]
-  }
-]
-```
+<ApiResponse
+  title="200 OK"
+  data={[
+    {
+      id: "p1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      name: "Basic",
+      price: 9.99,
+      features: [
+        "100 API calls/day",
+        "Market prices (delayed)",
+        "Basic weather data"
+      ]
+    },
+    {
+      id: "p2b3c4d5-e6f7-8901-bcde-f12345678901",
+      name: "Pro",
+      price: 29.99,
+      features: [
+        "5,000 API calls/day",
+        "Real-time market prices",
+        "Advanced weather forecasts",
+        "Agronomic advice"
+      ]
+    },
+    {
+      id: "p3c4d5e6-f7a8-9012-cdef-234567890123",
+      name: "Enterprise",
+      price: 99.99,
+      features: [
+        "Unlimited API calls",
+        "Real-time market prices",
+        "Advanced weather + alerts",
+        "Custom agronomic content",
+        "Priority support",
+        "Webhook integrations"
+      ]
+    }
+  ]}
+/>
 
 ---
 
@@ -103,27 +105,29 @@ Retrieves the details of a specific plan by its unique ID.
 
 **200 OK:**
 
-```json
-{
-  "id": "p1a2b3c4-d5e6-7890-abcd-ef1234567890",
-  "name": "Basic",
-  "price": 9.99,
-  "features": [
-    "100 API calls/day",
-    "Market prices (delayed)",
-    "Basic weather data"
-  ]
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    id: "p1a2b3c4-d5e6-7890-abcd-ef1234567890",
+    name: "Basic",
+    price: 9.99,
+    features: [
+      "100 API calls/day",
+      "Market prices (delayed)",
+      "Basic weather data"
+    ]
+  }}
+/>
 
 **404 Not Found:**
 
-```json
-{
-  "statusCode": 404,
-  "message": "Plan not found"
-}
-```
+<ApiResponse
+  title="404 Not Found"
+  data={{
+    statusCode: 404,
+    message: "Plan not found"
+  }}
+/>
 
 ---
 
@@ -171,13 +175,14 @@ This endpoint is typically restricted to admin users. Contact the platform team 
 
 **201 Created:**
 
-```json
-{
-  "id": "p4d5e6f7-a8b9-0123-defa-345678901234",
-  "name": "Pro Plan",
-  "price": 29.99
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    id: "p4d5e6f7-a8b9-0123-defa-345678901234",
+    name: "Pro Plan",
+    price: 29.99
+  }}
+/>
 
 ---
 

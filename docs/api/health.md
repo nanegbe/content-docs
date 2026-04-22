@@ -5,6 +5,7 @@ description: API reference for checking the E-Content API service health status.
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Health Check
 
@@ -46,12 +47,13 @@ Returns the current health status of the API server. No authentication required.
 
 **200 OK** — Service is healthy:
 
-```json
-{
-  "status": "ok",
-  "health": "running"
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    status: "ok",
+    health: "running"
+  }}
+/>
 
 ### Response Fields
 

@@ -5,6 +5,7 @@ description: API reference for authentication endpoints — login, register, and
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Authentication
 
@@ -71,23 +72,25 @@ Creates a new user account with complete profile information.
 
 **201 Created** — User successfully registered:
 
-```json
-{
-  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "email": "newuser@example.com",
-  "firstName": "John",
-  "lastName": "Doe"
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    email: "newuser@example.com",
+    firstName: "John",
+    lastName: "Doe"
+  }}
+/>
 
 **409 Conflict** — Email already in use:
 
-```json
-{
-  "statusCode": 409,
-  "message": "Email already in use"
-}
-```
+<ApiResponse
+  title="409 Conflict"
+  data={{
+    statusCode: 409,
+    message: "Email already in use"
+  }}
+/>
 
 ---
 
@@ -129,24 +132,26 @@ Authenticates a user with email and password. Returns a JWT access token on succ
 
 **200 OK** — Login successful:
 
-```json
-{
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user": {
-    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "email": "user@example.com"
-  }
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    user: {
+      id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      email: "user@example.com"
+    }
+  }}
+/>
 
 **401 Unauthorized** — Invalid credentials:
 
-```json
-{
-  "statusCode": 401,
-  "message": "Invalid credentials"
-}
-```
+<ApiResponse
+  title="401 Unauthorized"
+  data={{
+    statusCode: 401,
+    message: "Invalid credentials"
+  }}
+/>
 
 ---
 
@@ -177,24 +182,26 @@ Validates an existing user session. Use this to verify that a stored JWT token i
 
 **200 OK** — Token is valid:
 
-```json
-{
-  "authenticated": true,
-  "user": {
-    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "email": "user@example.com"
-  }
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    authenticated: true,
+    user: {
+      id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      email: "user@example.com"
+    }
+  }}
+/>
 
 **401 Unauthorized** — Token is missing or invalid:
 
-```json
-{
-  "statusCode": 401,
-  "message": "Missing or invalid Authorization header"
-}
-```
+<ApiResponse
+  title="401 Unauthorized"
+  data={{
+    statusCode: 401,
+    message: "Missing or invalid Authorization header"
+  }}
+/>
 
 :::tip
 Use this endpoint in your application's startup flow to check if a cached token is still valid before redirecting the user to login.

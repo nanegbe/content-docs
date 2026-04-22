@@ -5,6 +5,7 @@ description: Make your first E-Content API call in under 5 minutes.
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Quick Start
 
@@ -40,14 +41,15 @@ Create a new account by sending a `POST` request to the registration endpoint:
   label="REGISTER"
 />
 
-```json title="Response — 201 Created"
-{
-  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-  "email": "developer@example.com",
-  "firstName": "Jane",
-  "lastName": "Doe"
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    email: "developer@example.com",
+    firstName: "Jane",
+    lastName: "Doe"
+  }}
+/>
 
 ## Step 2 — Log In
 
@@ -64,15 +66,16 @@ Authenticate with your credentials to receive a JWT access token:
   label="LOGIN"
 />
 
-```json title="Response — 200 OK"
-{
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
-  "user": {
-    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
-    "email": "developer@example.com"
-  }
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    accessToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    user: {
+      id: "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+      email: "developer@example.com"
+    }
+  }}
+/>
 
 :::tip Save Your Token
 Store the `accessToken` — you'll need it for all authenticated requests. JWT tokens expire after a set period; use the login endpoint to obtain a new one.
@@ -92,14 +95,15 @@ For server-to-server integrations, create a persistent API key:
   label="CREATE API KEY"
 />
 
-```json title="Response — 201 Created"
-{
-  "id": "key-uuid",
-  "key": "sk_live_xxxxxxxxxxxxxx",
-  "name": "Production Key",
-  "createdAt": "2026-03-16T00:00:00.000Z"
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    id: "key-uuid",
+    key: "sk_live_xxxxxxxxxxxxxx",
+    name: "Production Key",
+    createdAt: "2026-03-16T00:00:00.000Z"
+  }}
+/>
 
 :::caution Store Your API Key Securely
 The full API key is only shown **once** at creation time. Store it securely — you won't be able to retrieve it again.
@@ -116,22 +120,23 @@ Now use your API key to query commodity market prices:
   label="GET COMMODITIES"
 />
 
-```json title="Response — 200 OK"
-[
-  {
-    "id": "c1d2e3f4-a5b6-7890-cdef-123456789abc",
-    "name": "Maize",
-    "unit": "kg",
-    "price": 450.00
-  },
-  {
-    "id": "d4e5f6a7-b8c9-0123-def4-56789abcdef0",
-    "name": "Rice",
-    "unit": "kg",
-    "price": 680.00
-  }
-]
-```
+<ApiResponse
+  title="200 OK"
+  data={[
+    {
+      id: "c1d2e3f4-a5b6-7890-cdef-123456789abc",
+      name: "Maize",
+      unit: "kg",
+      price: 450.00
+    },
+    {
+      id: "d4e5f6a7-b8c9-0123-def4-56789abcdef0",
+      name: "Rice",
+      unit: "kg",
+      price: 680.00
+    }
+  ]}
+/>
 
 ## Step 5 — Check API Health
 
@@ -144,12 +149,13 @@ Verify the API is running with the health check endpoint (no auth required):
   label="HEALTH CHECK"
 />
 
-```json title="Response — 200 OK"
-{
-  "status": "ok",
-  "health": "running"
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    status: "ok",
+    health: "running"
+  }}
+/>
 
 ---
 

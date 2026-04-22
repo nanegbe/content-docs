@@ -5,6 +5,7 @@ description: API reference for creating and managing API keys for programmatic a
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # API Keys
 
@@ -67,14 +68,15 @@ Generates a new API key for the authenticated user.
 
 **201 Created:**
 
-```json
-{
-  "id": "k1a2b3c4-d5e6-7890-abcd-ef1234567890",
-  "key": "sk_live_xxxxxxxxxxxxxx",
-  "name": "Production Server Key",
-  "createdAt": "2026-03-16T00:00:00.000Z"
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    id: "k1a2b3c4-d5e6-7890-abcd-ef1234567890",
+    key: "sk_live_xxxxxxxxxxxxxx",
+    name: "Production Server Key",
+    createdAt: "2026-03-16T00:00:00.000Z"
+  }}
+/>
 
 ### Response Fields
 

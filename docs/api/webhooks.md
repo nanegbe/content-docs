@@ -4,6 +4,8 @@ title: Webhooks
 description: API reference for webhook endpoints — receive real-time event notifications from Paystack.
 ---
 
+import ApiResponse from '@site/src/components/ApiResponse';
+
 # Webhooks
 
 Receive real-time event notifications from third-party services. Currently, the API supports Paystack webhooks for payment event processing.
@@ -62,30 +64,32 @@ Receives and processes webhook events from Paystack such as `charge.success` and
 
 **Example Payload:**
 
-```json title="charge.success event"
-{
-  "event": "charge.success",
-  "data": {
-    "reference": "pay_ref_abc123def456",
-    "amount": 2999,
-    "currency": "GHS",
-    "status": "success",
-    "customer": {
-      "email": "user@example.com"
+<ApiResponse
+  title="charge.success event"
+  data={{
+    event: "charge.success",
+    data: {
+      reference: "pay_ref_abc123def456",
+      amount: 2999,
+      currency: "GHS",
+      status: "success",
+      customer: {
+        email: "user@example.com"
+      }
     }
-  }
-}
-```
+  }}
+/>
 
 ### Response
 
 **200 OK** — Event received and processed:
 
-```json
-{
-  "received": true
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    received: true
+  }}
+/>
 
 ---
 

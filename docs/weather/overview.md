@@ -5,6 +5,7 @@ description: Deliver hyperlocal weather forecasts, alerts, and seasonal outlooks
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Weather API
 
@@ -33,27 +34,28 @@ Fetch the current weather conditions for a location:
   label="GET CURRENT WEATHER"
 />
 
-```json title="Response — 200 OK"
-{
-  "location": {
-    "lat": 5.6037,
-    "lon": -0.1870,
-    "name": "Accra",
-    "region": "Greater Accra",
-    "country": "GH"
-  },
-  "current": {
-    "temperature": 31.2,
-    "humidity": 72,
-    "windSpeed": 14.5,
-    "windDirection": "SW",
-    "condition": "Partly Cloudy",
-    "precipitation": 0,
-    "uvIndex": 8
-  },
-  "updatedAt": "2026-04-21T14:30:00.000Z"
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    location: {
+      lat: 5.6037,
+      lon: -0.1870,
+      name: "Accra",
+      region: "Greater Accra",
+      country: "GH"
+    },
+    current: {
+      temperature: 31.2,
+      humidity: 72,
+      windSpeed: 14.5,
+      windDirection: "SW",
+      condition: "Partly Cloudy",
+      precipitation: 0,
+      uvIndex: 8
+    },
+    updatedAt: "2026-04-21T14:30:00.000Z"
+  }}
+/>
 
 :::info Authentication Required
 Weather endpoints require API Key authentication. See the [Authentication guide](../getting-started/authentication) to set up your credentials.
@@ -114,36 +116,37 @@ Returns a multi-day weather forecast for a given location.
   label="GET WEATHER FORECAST"
 />
 
-```json title="Response — 200 OK"
-{
-  "location": {
-    "lat": 5.6037,
-    "lon": -0.1870,
-    "name": "Accra",
-    "country": "GH"
-  },
-  "forecast": [
-    {
-      "date": "2026-04-22",
-      "tempMin": 24.5,
-      "tempMax": 32.1,
-      "humidity": 75,
-      "precipitation": 2.3,
-      "condition": "Light Rain",
-      "description": "Light showers expected in the afternoon"
+<ApiResponse
+  title="200 OK"
+  data={{
+    location: {
+      lat: 5.6037,
+      lon: -0.1870,
+      name: "Accra",
+      country: "GH"
     },
-    {
-      "date": "2026-04-23",
-      "tempMin": 25.0,
-      "tempMax": 33.4,
-      "humidity": 68,
-      "precipitation": 0,
-      "condition": "Sunny",
-      "description": "Clear skies, good conditions for harvesting"
-    }
-  ]
-}
-```
+    forecast: [
+      {
+        date: "2026-04-22",
+        tempMin: 24.5,
+        tempMax: 32.1,
+        humidity: 75,
+        precipitation: 2.3,
+        condition: "Light Rain",
+        description: "Light showers expected in the afternoon"
+      },
+      {
+        date: "2026-04-23",
+        tempMin: 25.0,
+        tempMax: 33.4,
+        humidity: 68,
+        precipitation: 0,
+        condition: "Sunny",
+        description: "Clear skies, good conditions for harvesting"
+      }
+    ]
+  }}
+/>
 
 ---
 
@@ -170,22 +173,23 @@ Returns active severe weather alerts for a location or region.
   label="GET WEATHER ALERTS"
 />
 
-```json title="Response — 200 OK"
-{
-  "alerts": [
-    {
-      "id": "alert-uuid",
-      "type": "HEAVY_RAIN",
-      "severity": "warning",
-      "title": "Heavy Rainfall Warning",
-      "description": "Heavy rainfall expected in Greater Accra region. Risk of localized flooding in low-lying farm areas.",
-      "startTime": "2026-04-22T06:00:00.000Z",
-      "endTime": "2026-04-22T18:00:00.000Z",
-      "affectedArea": "Greater Accra Region"
-    }
-  ]
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    alerts: [
+      {
+        id: "alert-uuid",
+        type: "HEAVY_RAIN",
+        severity: "warning",
+        title: "Heavy Rainfall Warning",
+        description: "Heavy rainfall expected in Greater Accra region. Risk of localized flooding in low-lying farm areas.",
+        startTime: "2026-04-22T06:00:00.000Z",
+        endTime: "2026-04-22T18:00:00.000Z",
+        affectedArea: "Greater Accra Region"
+      }
+    ]
+  }}
+/>
 
 ---
 

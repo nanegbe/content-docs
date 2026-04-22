@@ -5,6 +5,7 @@ description: API reference for seeding the database with initial or test data.
 ---
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
+import ApiResponse from '@site/src/components/ApiResponse';
 
 # Database Seeding
 
@@ -49,11 +50,12 @@ Triggers the database seeding process, populating the database with predefined s
 
 **201 Created** — Seeding process initiated:
 
-```json
-{
-  "message": "Seeding process initiated"
-}
-```
+<ApiResponse
+  title="201 Created"
+  data={{
+    message: "Seeding process initiated"
+  }}
+/>
 
 ---
 
