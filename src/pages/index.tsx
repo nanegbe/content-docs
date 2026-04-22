@@ -49,43 +49,22 @@ const features: FeatureItem[] = [
     title: 'Market Prices',
     description:
       'Access real-time commodity prices across markets. Help farmers make informed selling decisions with up-to-date pricing data.',
-    link: '/docs/api/commodities',
+    link: '/docs/market-price/overview',
   },
   {
     icon: '🌦️',
     title: 'Weather Updates',
     description:
       'Deliver localized weather forecasts and alerts. Enable farmers to plan planting, irrigation, and harvesting activities.',
-    link: '/docs/getting-started/introduction',
+    link: '/docs/weather/overview',
   },
   {
     icon: '🌱',
     title: 'Agronomic Advice',
     description:
       'Provide crop-specific guidance, pest management tips, and best farming practices tailored to local conditions.',
-    link: '/docs/getting-started/introduction',
+    link: '/docs/agronomics/overview',
   },
-  // {
-  //   icon: '🔐',
-  //   title: 'Authentication & API Keys',
-  //   description:
-  //     'Secure your integration with JWT tokens and API keys. Full auth lifecycle management out of the box.',
-  //   link: '/docs/api/authentication',
-  // },
-  // {
-  //   icon: '💳',
-  //   title: 'Payments & Plans',
-  //   description:
-  //     'Manage subscription plans and process payments seamlessly with integrated Paystack support.',
-  //   link: '/docs/api/plans',
-  // },
-  // {
-  //   icon: '🔔',
-  //   title: 'Webhooks',
-  //   description:
-  //     'Receive real-time event notifications for payment confirmations and system events via secure webhooks.',
-  //   link: '/docs/api/webhooks',
-  // },
 ];
 
 function Feature({icon, title, description, link}: FeatureItem) {
@@ -115,14 +94,14 @@ function QuickLinks() {
               <span>Make your first API call in 5 minutes</span>
             </div>
           </Link>
-          <Link to="/docs/api/authentication" className={styles.quickLinkCard}>
+          <Link to="/docs/getting-started/authentication" className={styles.quickLinkCard}>
             <span className={styles.quickLinkIcon}>🔑</span>
             <div>
               <strong>Authentication</strong>
               <span>Set up API keys and JWT tokens</span>
             </div>
           </Link>
-          <Link to="/docs/api/commodities" className={styles.quickLinkCard}>
+          <Link to="/docs/market-price/overview" className={styles.quickLinkCard}>
             <span className={styles.quickLinkIcon}>📡</span>
             <div>
               <strong>API Reference</strong>

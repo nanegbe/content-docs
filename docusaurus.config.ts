@@ -60,55 +60,82 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: 'Documentation',
-        // },
-        // {
-        //   href: 'https://github.com/agri-content',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Docs',
+        },
+        {
+          to: '/docs/market-price/overview',
+          label: 'Market Prices',
+          position: 'left',
+        },
+        {
+          to: '/docs/weather/overview',
+          label: 'Weather',
+          position: 'left',
+        },
+        {
+          to: '/docs/agronomics/overview',
+          label: 'Agronomics',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/agri-content',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Documentation',
+          title: 'Getting Started',
           items: [
             {
-              label: 'Getting Started',
+              label: 'Introduction',
               to: '/docs/getting-started/introduction',
             },
             {
-              label: 'API Reference',
-              to: '/docs/api/authentication',
+              label: 'Quick Start',
+              to: '/docs/getting-started/quick-start',
+            },
+            {
+              label: 'Authentication',
+              to: '/docs/getting-started/authentication',
             },
           ],
         },
         {
-          title: 'API Endpoints',
+          title: 'Core APIs',
           items: [
             {
-              label: 'Auth',
-              to: '/docs/api/authentication',
-            },
-            {
               label: 'Market Prices',
-              to: '/docs/api/commodities',
+              to: '/docs/market-price/overview',
             },
             {
-              label: 'Plans & Payments',
-              to: '/docs/api/plans',
+              label: 'Weather',
+              to: '/docs/weather/overview',
+            },
+            {
+              label: 'Agronomics',
+              to: '/docs/agronomics/overview',
             },
           ],
         },
         {
           title: 'Resources',
           items: [
+            {
+              label: 'Plans & Payments',
+              to: '/docs/api/plans',
+            },
+            {
+              label: 'Webhooks',
+              to: '/docs/api/webhooks',
+            },
             {
               label: 'GitHub',
               href: 'https://github.com/agri-content',
