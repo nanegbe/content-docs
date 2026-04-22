@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -8,7 +8,7 @@ import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={styles.heroBanner}>
       <div className="container">
@@ -67,7 +67,7 @@ const features: FeatureItem[] = [
   },
 ];
 
-function Feature({icon, title, description, link}: FeatureItem) {
+function Feature({ icon, title, description, link }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <Link to={link} className={styles.featureCard}>
@@ -115,11 +115,11 @@ function QuickLinks() {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
       title="Developer Documentation"
-      description="Agri-Content API documentation — market prices, weather updates, and agronomic advice for farmers.">
+      description="E-Content API documentation — market prices, weather updates, and agronomic advice for farmers.">
       <HomepageHeader />
       <main>
         <QuickLinks />

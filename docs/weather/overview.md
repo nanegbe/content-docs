@@ -25,7 +25,7 @@ Deliver localized weather forecasts, severe weather alerts, and seasonal outlook
 Fetch the current weather conditions for a location:
 
 ```bash
-curl -X GET "https://api.agri-content.com/api/v1/dev/weather?lat=5.6037&lon=-0.1870" \
+curl -X GET "https://api.e-Content.com/api/v1/dev/weather?lat=5.6037&lon=-0.1870" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -104,7 +104,7 @@ Returns a multi-day weather forecast for a given location.
 **Example:**
 
 ```bash
-curl -X GET "https://api.agri-content.com/api/v1/dev/weather/forecast?lat=5.6037&lon=-0.1870&days=7" \
+curl -X GET "https://api.e-Content.com/api/v1/dev/weather/forecast?lat=5.6037&lon=-0.1870&days=7" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -158,7 +158,7 @@ Returns active severe weather alerts for a location or region.
 **Example:**
 
 ```bash
-curl -X GET "https://api.agri-content.com/api/v1/dev/weather/alerts?lat=5.6037&lon=-0.1870" \
+curl -X GET "https://api.e-Content.com/api/v1/dev/weather/alerts?lat=5.6037&lon=-0.1870" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 

@@ -25,7 +25,7 @@ Deliver crop-specific guidance, pest and disease management recommendations, and
 Fetch agronomic advice for a specific crop:
 
 ```bash
-curl -X GET "https://api.agri-content.com/api/v1/dev/agronomics?crop=maize&region=greater-accra" \
+curl -X GET "https://api.e-Content.com/api/v1/dev/agronomics?crop=maize&region=greater-accra" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -108,7 +108,7 @@ Returns pest and disease identification with management recommendations.
 **Example:**
 
 ```bash
-curl -X GET "https://api.agri-content.com/api/v1/dev/agronomics/pests?crop=maize&symptom=leaf-blight" \
+curl -X GET "https://api.e-Content.com/api/v1/dev/agronomics/pests?crop=maize&symptom=leaf-blight" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -164,7 +164,7 @@ Returns a seasonal planting and activity calendar for a region.
 **Example:**
 
 ```bash
-curl -X GET "https://api.agri-content.com/api/v1/dev/agronomics/calendar?region=greater-accra&year=2026" \
+curl -X GET "https://api.e-Content.com/api/v1/dev/agronomics/calendar?region=greater-accra&year=2026" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 

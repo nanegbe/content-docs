@@ -8,7 +8,7 @@ description: API reference for authentication endpoints — login, register, and
 
 Manage user authentication, registration, and session validation.
 
-**Base URL:** `https://api.agri-content.com/api/v1/auth`
+**Base URL:** `https://api.e-Content.com/api/v1/auth`
 
 ---
 
@@ -45,7 +45,7 @@ Creates a new user account with complete profile information.
 **Example:**
 
 ```bash
-curl -X POST https://api.agri-content.com/api/v1/auth/register \
+curl -X POST https://api.e-Content.com/api/v1/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "email": "newuser@example.com",
@@ -111,7 +111,7 @@ Authenticates a user with email and password. Returns a JWT access token on succ
 **Example:**
 
 ```bash
-curl -X POST https://api.agri-content.com/api/v1/auth/login \
+curl -X POST https://api.e-Content.com/api/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "user@example.com",
@@ -162,7 +162,7 @@ Validates an existing user session. Use this to verify that a stored JWT token i
 **Example:**
 
 ```bash
-curl -X POST https://api.agri-content.com/api/v1/auth/authenticate-user \
+curl -X POST https://api.e-Content.com/api/v1/auth/authenticate-user \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 ```

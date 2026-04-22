@@ -8,7 +8,7 @@ description: API reference for seeding the database with initial or test data.
 
 Seed the database with initial or test data for development and staging environments.
 
-**Base URL:** `https://api.agri-content.com/api/v1/seed`
+**Base URL:** `https://api.e-Content.com/api/v1/seed`
 
 ---
 

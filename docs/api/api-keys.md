@@ -6,9 +6,9 @@ description: API reference for creating and managing API keys for programmatic a
 
 # API Keys
 
-Generate and manage API keys for server-to-server and programmatic access to the Agri-Content API.
+Generate and manage API keys for server-to-server and programmatic access to the E-Content API.
 
-**Base URL:** `https://api.agri-content.com/api/v1/api-key`
+**Base URL:** `https://api.e-Content.com/api/v1/api-key`
 
 ---
 
@@ -52,7 +52,7 @@ Generates a new API key for the authenticated user.
 **Example:**
 
 ```bash
-curl -X POST https://api.agri-content.com/api/v1/api-key \
+curl -X POST https://api.e-Content.com/api/v1/api-key \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." \
   -d '{
@@ -94,7 +94,7 @@ The `key` field containing the full API key value is returned **only once** at c
 Once you have an API key, include it in the `Authorization` header of your requests:
 
 ```bash
-curl -X GET https://api.agri-content.com/api/v1/dev/commodities \
+curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
   -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxx"
 ```
 
@@ -104,7 +104,7 @@ Store your API key in environment variables — never hardcode secrets:
 
 ```bash title=".env"
 AGRI_CONTENT_API_KEY=sk_live_xxxxxxxxxxxxxx
-AGRI_CONTENT_BASE_URL=https://api.agri-content.com/api/v1
+AGRI_CONTENT_BASE_URL=https://api.e-Content.com/api/v1
 ```
 
 ```javascript title="api-client.js"

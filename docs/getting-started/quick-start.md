@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 title: Quick Start
-description: Make your first Agri-Content API call in under 5 minutes.
+description: Make your first E-Content API call in under 5 minutes.
 ---
 
 # Quick Start
 
-Get up and running with the Agri-Content API in under 5 minutes. This guide walks you through registration, authentication, and making your first API call.
+Get up and running with the E-Content API in under 5 minutes. This guide walks you through registration, authentication, and making your first API call.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ Get up and running with the Agri-Content API in under 5 minutes. This guide walk
 Create a new account by sending a `POST` request to the registration endpoint:
 
 ```bash title="Register"
-curl -X POST https://api.agri-content.com/api/v1/auth/register \
+curl -X POST https://api.e-Content.com/api/v1/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "email": "developer@example.com",
@@ -50,7 +50,7 @@ curl -X POST https://api.agri-content.com/api/v1/auth/register \
 Authenticate with your credentials to receive a JWT access token:
 
 ```bash title="Login"
-curl -X POST https://api.agri-content.com/api/v1/auth/login \
+curl -X POST https://api.e-Content.com/api/v1/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "developer@example.com",
@@ -77,7 +77,7 @@ Store the `accessToken` — you'll need it for all authenticated requests. JWT t
 For server-to-server integrations, create a persistent API key:
 
 ```bash title="Create API Key"
-curl -X POST https://api.agri-content.com/api/v1/api-key \
+curl -X POST https://api.e-Content.com/api/v1/api-key \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -d '{
@@ -104,7 +104,7 @@ The full API key is only shown **once** at creation time. Store it securely — 
 Now use your API key to query commodity market prices:
 
 ```bash title="Get All Commodities"
-curl -X GET https://api.agri-content.com/api/v1/dev/commodities \
+curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
   -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxx"
 ```
 
@@ -130,7 +130,7 @@ curl -X GET https://api.agri-content.com/api/v1/dev/commodities \
 Verify the API is running with the health check endpoint (no auth required):
 
 ```bash title="Health Check"
-curl -X GET https://api.agri-content.com/api/v1/health
+curl -X GET https://api.e-Content.com/api/v1/health
 ```
 
 ```json title="Response — 200 OK"

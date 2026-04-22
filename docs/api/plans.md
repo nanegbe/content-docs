@@ -8,7 +8,7 @@ description: API reference for managing subscription plans — list, retrieve, a
 
 Manage subscription plans that determine user access levels and pricing tiers.
 
-**Base URL:** `https://api.agri-content.com/api/v1/plans`
+**Base URL:** `https://api.e-Content.com/api/v1/plans`
 
 ---
 
@@ -23,7 +23,7 @@ Retrieves a list of all available subscription plans. No authentication required
 **Example:**
 
 ```bash
-curl -X GET https://api.agri-content.com/api/v1/plans
+curl -X GET https://api.e-Content.com/api/v1/plans
 ```
 
 ### Response
@@ -88,7 +88,7 @@ Retrieves the details of a specific plan by its unique ID.
 **Example:**
 
 ```bash
-curl -X GET https://api.agri-content.com/api/v1/plans/p1a2b3c4-d5e6-7890-abcd-ef1234567890
+curl -X GET https://api.e-Content.com/api/v1/plans/p1a2b3c4-d5e6-7890-abcd-ef1234567890
 ```
 
 ### Responses
@@ -148,7 +148,7 @@ This endpoint is typically restricted to admin users. Contact the platform team 
 **Example:**
 
 ```bash
-curl -X POST https://api.agri-content.com/api/v1/plans \
+curl -X POST https://api.e-Content.com/api/v1/plans \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Pro Plan",

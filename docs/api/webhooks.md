@@ -8,13 +8,13 @@ description: API reference for webhook endpoints — receive real-time event not
 
 Receive real-time event notifications from third-party services. Currently, the API supports Paystack webhooks for payment event processing.
 
-**Base URL:** `https://api.agri-content.com/api/v1/webhook`
+**Base URL:** `https://api.e-Content.com/api/v1/webhook`
 
 ---
 
 ## Overview
 
-Webhooks allow external services to notify the Agri-Content API when events occur (e.g., a payment is completed). Instead of polling for updates, your system receives instant notifications.
+Webhooks allow external services to notify the E-Content API when events occur (e.g., a payment is completed). Instead of polling for updates, your system receives instant notifications.
 
 ### How It Works
 

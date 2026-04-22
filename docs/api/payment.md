@@ -8,7 +8,7 @@ description: API reference for initiating payments and processing transactions w
 
 Process payments for subscription plans using the integrated Paystack payment gateway.
 
-**Base URL:** `https://api.agri-content.com/api/v1/payment`
+**Base URL:** `https://api.e-Content.com/api/v1/payment`
 
 ---
 
@@ -28,7 +28,7 @@ The payment process follows a redirect-based flow:
 ```mermaid
 sequenceDiagram
     participant Client
-    participant API as Agri-Content API
+    participant API as E-Content API
     participant PS as Paystack
 
     Client->>API: POST /api/v1/payment
@@ -70,7 +70,7 @@ Creates a new payment transaction and returns a Paystack authorization URL for t
 **Example:**
 
 ```bash
-curl -X POST https://api.agri-content.com/api/v1/payment \
+curl -X POST https://api.e-Content.com/api/v1/payment \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   -d '{
@@ -122,7 +122,7 @@ Here's a complete example of integrating the payment flow in a web application:
 ```javascript title="payment-integration.js"
 async function subscribeToPlan(planId, amount, currency) {
   // Step 1: Initiate payment
-  const response = await fetch('https://api.agri-content.com/api/v1/payment', {
+  const response = await fetch('https://api.e-Content.com/api/v1/payment', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

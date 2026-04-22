@@ -8,7 +8,7 @@ description: API reference for retrieving commodity market price data.
 
 Access commodity market price data including crop prices, units, and market information. This is a core endpoint for delivering market intelligence to farmers.
 
-**Base URL:** `https://api.agri-content.com/api/v1/dev/commodities`
+**Base URL:** `https://api.e-Content.com/api/v1/dev/commodities`
 
 ---
 
@@ -44,7 +44,7 @@ Retrieves all available commodities with their current market prices.
 **Example:**
 
 ```bash
-curl -X GET https://api.agri-content.com/api/v1/dev/commodities \
+curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
   -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxx"
 ```
 
@@ -107,7 +107,7 @@ const API_KEY = process.env.AGRI_CONTENT_API_KEY;
 
 async function displayMarketPrices() {
   const response = await fetch(
-    'https://api.agri-content.com/api/v1/dev/commodities',
+    'https://api.e-Content.com/api/v1/dev/commodities',
     {
       headers: { 'Authorization': `Bearer ${API_KEY}` },
     }
@@ -137,7 +137,7 @@ import os
 import requests
 
 API_KEY = os.environ["AGRI_CONTENT_API_KEY"]
-BASE_URL = "https://api.agri-content.com/api/v1"
+BASE_URL = "https://api.e-Content.com/api/v1"
 
 def check_price_alerts(thresholds: dict):
     """Check if any commodity prices exceed alert thresholds."""

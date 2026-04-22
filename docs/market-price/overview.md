@@ -24,7 +24,7 @@ Access real-time and historical commodity price data across agricultural markets
 Fetch all available commodity prices with a single API call:
 
 ```bash
-curl -X GET https://api.agri-content.com/api/v1/dev/commodities \
+curl -X GET https://api.e-Content.com/api/v1/dev/commodities \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -106,7 +106,7 @@ Build a web or mobile dashboard showing daily commodity prices:
 ```javascript title="price-dashboard.js"
 async function fetchMarketPrices() {
   const response = await fetch(
-    'https://api.agri-content.com/api/v1/dev/commodities',
+    'https://api.e-Content.com/api/v1/dev/commodities',
     { headers: { 'Authorization': `Bearer ${API_KEY}` } }
   );
 
@@ -131,7 +131,7 @@ import requests
 def check_and_alert(api_key, thresholds):
     """Check prices and send SMS alerts for threshold breaches."""
     commodities = requests.get(
-        "https://api.agri-content.com/api/v1/dev/commodities",
+        "https://api.e-Content.com/api/v1/dev/commodities",
         headers={"Authorization": f"Bearer {api_key}"}
     ).json()
 

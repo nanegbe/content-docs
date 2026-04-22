@@ -1,11 +1,11 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'Agri-Content API',
+  title: 'E-Content API',
   tagline: 'Market prices, weather updates & agronomic advice for farmers — delivered via API',
   favicon: 'img/favicon.ico',
 
@@ -15,11 +15,11 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://docs.agri-content.com',
+  url: 'https://docs.e-Content.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/',
 
-  organizationName: 'agri-content',
+  organizationName: 'e-Content',
   projectName: 'content-docs',
 
   onBrokenLinks: 'throw',
@@ -54,18 +54,18 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Agri-Content',
+      title: 'E-Content',
       logo: {
-        alt: 'Agri-Content Logo',
+        alt: 'E-Content Logo',
         src: 'img/logo.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'tutorialSidebar',
+        //   position: 'left',
+        //   label: 'Docs',
+        // },
         {
           to: '/docs/market-price/overview',
           label: 'Market Prices',
@@ -82,7 +82,7 @@ const config: Config = {
           position: 'left',
         },
         {
-          href: 'https://github.com/agri-content',
+          href: 'https://github.com/e-Content',
           label: 'GitHub',
           position: 'right',
         },
@@ -138,12 +138,12 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/agri-content',
+              href: 'https://github.com/e-Content',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Agri-Content. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} E-Content. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

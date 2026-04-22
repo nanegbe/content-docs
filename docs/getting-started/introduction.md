@@ -1,16 +1,16 @@
 ---
 sidebar_position: 1
 title: Introduction
-description: Overview of the Agri-Content API — market prices, weather updates, and agronomic advice for farmers.
+description: Overview of the E-Content API — market prices, weather updates, and agronomic advice for farmers.
 ---
 
 # Introduction
 
-Welcome to the **Agri-Content API** — a comprehensive platform that delivers agricultural intelligence to farmers and agribusinesses through a simple, modern REST API.
+Welcome to the **E-Content API** — a comprehensive platform that delivers agricultural intelligence to farmers and agribusinesses through a simple, modern REST API.
 
-## What is Agri-Content?
+## What is E-Content?
 
-Agri-Content is a backend service designed to provide farmers with the data and insights they need to make better decisions. Our API delivers three core pillars of agricultural intelligence:
+E-Content is a backend service designed to provide farmers with the data and insights they need to make better decisions. Our API delivers three core pillars of agricultural intelligence:
 
 | Pillar | Description |
 |---|---|
@@ -20,7 +20,7 @@ Agri-Content is a backend service designed to provide farmers with the data and 
 
 ## Who Is This For?
 
-This documentation is built for **developers** integrating Agri-Content data into their own applications:
+This documentation is built for **developers** integrating E-Content data into their own applications:
 
 - **Mobile app developers** building tools for smallholder farmers
 - **Agritech platforms** needing market price feeds and weather data
@@ -29,10 +29,10 @@ This documentation is built for **developers** integrating Agri-Content data int
 
 ## API Overview
 
-The Agri-Content API is a RESTful service built with [NestJS](https://nestjs.com/). All endpoints are prefixed with:
+The E-Content API is a RESTful service built with [NestJS](https://nestjs.com/). All endpoints are prefixed with:
 
 ```
-https://api.agri-content.com/api/v1
+https://api.e-Content.com/api/v1
 ```
 
 ### Core capabilities
@@ -56,8 +56,8 @@ The API supports two authentication methods:
 
 | Environment | URL |
 |---|---|
-| Production | `https://api.agri-content.com/api/v1` |
-| Staging | `https://staging-api.agri-content.com/api/v1` |
+| Production | `https://api.e-Content.com/api/v1` |
+| Staging | `https://staging-api.e-Content.com/api/v1` |
 | Local Development | `http://localhost:3000/api/v1` |
 
 ## Response Format

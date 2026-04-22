@@ -1,14 +1,14 @@
 ---
 sidebar_position: 7
 title: Health Check
-description: API reference for checking the Agri-Content API service health status.
+description: API reference for checking the E-Content API service health status.
 ---
 
 # Health Check
 
-Monitor the operational status of the Agri-Content API service.
+Monitor the operational status of the E-Content API service.
 
-**Base URL:** `https://api.agri-content.com/api/v1/health`
+**Base URL:** `https://api.e-Content.com/api/v1/health`
 
 ---
 
@@ -34,7 +34,7 @@ Returns the current health status of the API server. No authentication required.
 **Example:**
 
 ```bash
-curl -X GET https://api.agri-content.com/api/v1/health
+curl -X GET https://api.e-Content.com/api/v1/health
 ```
 
 ### Response
@@ -63,7 +63,7 @@ curl -X GET https://api.agri-content.com/api/v1/health
 
 Configure your monitoring tool to:
 
-1. Send a `GET` request to `https://api.agri-content.com/api/v1/health`
+1. Send a `GET` request to `https://api.e-Content.com/api/v1/health`
 2. Expect HTTP status code `200`
 3. Optionally verify the response body contains `"status": "ok"`
 4. Set check interval to 60 seconds (recommended)
@@ -74,8 +74,8 @@ Use the health endpoint in container orchestration:
 
 ```yaml title="docker-compose.yml"
 services:
-  agri-content-api:
-    image: agri-content/api:latest
+  e-Content-api:
+    image: e-Content/api:latest
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/v1/health"]
       interval: 30s
@@ -104,7 +104,7 @@ readinessProbe:
 ```bash title="health-check.sh"
 #!/bin/bash
 
-HEALTH_URL="https://api.agri-content.com/api/v1/health"
+HEALTH_URL="https://api.e-Content.com/api/v1/health"
 
 response=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_URL")
 
@@ -121,5 +121,5 @@ fi
 
 ## Related
 
-- **[Introduction →](../getting-started/introduction)** — Overview of the Agri-Content platform
+- **[Introduction →](../getting-started/introduction)** — Overview of the E-Content platform
 - **[Quick Start →](../getting-started/quick-start)** — Get up and running in 5 minutes
