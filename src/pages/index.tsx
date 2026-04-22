@@ -42,6 +42,7 @@ interface MarketItem {
   id: string;
   name: string;
   symbol: string;
+  emoji: string;
   price: number;
   currency: string;
   unit: string;
@@ -51,16 +52,16 @@ interface MarketItem {
 
 // ─── Mock data ────────────────────────────────────────────────────────────────
 const MOCK_DATA: MarketItem[] = [
-  { id: '1', name: 'Maize', symbol: 'MZE', price: 320, currency: 'GHS', unit: 'bag', change: +5.50, changePct: +1.75 },
-  { id: '2', name: 'Rice (Local)', symbol: 'RCL', price: 580, currency: 'GHS', unit: 'bag', change: -8.00, changePct: -1.36 },
-  { id: '3', name: 'Beans', symbol: 'BNS', price: 480, currency: 'GHS', unit: 'bag', change: +12.00, changePct: +2.56 },
-  { id: '4', name: 'Cassava', symbol: 'CSV', price: 95, currency: 'GHS', unit: 'kg', change: -1.50, changePct: -1.55 },
-  { id: '5', name: 'Plantain', symbol: 'PLT', price: 75, currency: 'GHS', unit: 'bunch', change: +3.00, changePct: +4.17 },
-  { id: '6', name: 'Tomatoes', symbol: 'TMT', price: 140, currency: 'GHS', unit: 'crate', change: -5.00, changePct: -3.45 },
-  { id: '7', name: 'Groundnuts', symbol: 'GND', price: 260, currency: 'GHS', unit: 'bag', change: +7.00, changePct: +2.77 },
-  { id: '8', name: 'Yam', symbol: 'YAM', price: 45, currency: 'GHS', unit: 'tuber', change: +2.00, changePct: +4.65 },
-  { id: '9', name: 'Sorghum', symbol: 'SRG', price: 295, currency: 'GHS', unit: 'bag', change: -4.50, changePct: -1.50 },
-  { id: '10', name: 'Palm Oil', symbol: 'PLO', price: 520, currency: 'GHS', unit: 'drum', change: +15.00, changePct: +2.97 },
+  { id: '1',  name: 'Maize',        symbol: 'MZE', emoji: '🌽', price: 320,  currency: 'GHS', unit: 'bag',   change: +5.50,  changePct: +1.75 },
+  { id: '2',  name: 'Rice (Local)', symbol: 'RCL', emoji: '🍚', price: 580,  currency: 'GHS', unit: 'bag',   change: -8.00,  changePct: -1.36 },
+  { id: '3',  name: 'Beans',        symbol: 'BNS', emoji: '🫘', price: 480,  currency: 'GHS', unit: 'bag',   change: +12.00, changePct: +2.56 },
+  { id: '4',  name: 'Cassava',      symbol: 'CSV', emoji: '🥔', price: 95,   currency: 'GHS', unit: 'kg',    change: -1.50,  changePct: -1.55 },
+  { id: '5',  name: 'Plantain',     symbol: 'PLT', emoji: '🍌', price: 75,   currency: 'GHS', unit: 'bunch', change: +3.00,  changePct: +4.17 },
+  { id: '6',  name: 'Tomatoes',     symbol: 'TMT', emoji: '🍅', price: 140,  currency: 'GHS', unit: 'crate', change: -5.00,  changePct: -3.45 },
+  { id: '7',  name: 'Groundnuts',   symbol: 'GND', emoji: '🥜', price: 260,  currency: 'GHS', unit: 'bag',   change: +7.00,  changePct: +2.77 },
+  { id: '8',  name: 'Yam',          symbol: 'YAM', emoji: '🍠', price: 45,   currency: 'GHS', unit: 'tuber', change: +2.00,  changePct: +4.65 },
+  { id: '9',  name: 'Sorghum',      symbol: 'SRG', emoji: '🌾', price: 295,  currency: 'GHS', unit: 'bag',   change: -4.50,  changePct: -1.50 },
+  { id: '10', name: 'Palm Oil',     symbol: 'PLO', emoji: '🌴', price: 520,  currency: 'GHS', unit: 'drum',  change: +15.00, changePct: +2.97 },
 ];
 
 function simulatePriceUpdate(items: MarketItem[]): MarketItem[] {
@@ -96,18 +97,14 @@ function TickerChip({ item, flash }: { item: MarketItem; flash: boolean }) {
         userSelect: 'none',
       }}
     >
-      {/* Symbol badge */}
+      {/* Emoji badge */}
       <span style={{
-        fontSize: '10px',
-        fontWeight: 700,
-        letterSpacing: '0.08em',
-        color: '#4ade80',
-        background: 'rgba(74,222,128,0.08)',
-        padding: '2px 6px',
-        borderRadius: '3px',
-        border: '1px solid rgba(74,222,128,0.2)',
+        fontSize: '18px',
+        lineHeight: 1,
+        display: 'flex',
+        alignItems: 'center',
       }}>
-        {item.symbol}
+        {item.emoji}
       </span>
 
       {/* Name */}
