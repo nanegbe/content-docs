@@ -1,9 +1,5 @@
 {
   "label": "API Reference",
   "position": 2,
-  "collapsed": false,
-  "link": {
-    "type": "generated-index",
-    "description": "Complete reference for all E-Content API endpoints."
-  }
+  "collapsed": false
 }

@@ -1,9 +1,6 @@
 {
   "label": "Agronomics",
   "position": 5,
-  "collapsed": false,
-  "link": {
-    "type": "generated-index",
-    "description": "Everything you need know about agronomics."
-  }
+  "collapsed": false
+  
 }

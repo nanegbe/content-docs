@@ -1,9 +1,6 @@
 {
   "label": "Weather",
   "position": 4,
-  "collapsed": false,
-  "link": {
-    "type": "generated-index",
-    "description": "Everything you need know about weather."
-  }
+  "collapsed": false
+  
 }
