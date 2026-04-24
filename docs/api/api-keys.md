@@ -108,28 +108,34 @@ Once you have an API key, include it in the `Authorization` header of your reque
 
 Store your API key in environment variables — never hardcode secrets:
 
-```bash title=".env"
-AGRI_CONTENT_API_KEY=sk_live_xxxxxxxxxxxxxx
-AGRI_CONTENT_BASE_URL=https://api.e-Content.com/api/v1
-```
+<ApiResponse
+  title=".env"
+  language="bash"
+  data={`AGRI_CONTENT_API_KEY=sk_live_xxxxxxxxxxxxxx
+AGRI_CONTENT_BASE_URL=https://api.e-Content.com/api/v1`}
+/>
 
-```javascript title="api-client.js"
-const API_KEY = process.env.AGRI_CONTENT_API_KEY;
+<ApiResponse
+  title="api-client.js"
+  language="node"
+  data={`const API_KEY = process.env.AGRI_CONTENT_API_KEY;
 const BASE_URL = process.env.AGRI_CONTENT_BASE_URL;
 
 async function getCommodities() {
-  const response = await fetch(`${BASE_URL}/dev/commodities`, {
+  const response = await fetch(\\\`\\\${BASE_URL}/dev/commodities\\\`, {
     headers: {
-      'Authorization': `Bearer ${API_KEY}`,
+      'Authorization': \\\`Bearer \\\${API_KEY}\\\`,
     },
   });
 
   return response.json();
-}
-```
+}`}
+/>
 
-```python title="api_client.py"
-import os
+<ApiResponse
+  title="api_client.py"
+  language="python"
+  data={`import os
 import requests
 
 API_KEY = os.environ["AGRI_CONTENT_API_KEY"]
@@ -140,8 +146,8 @@ def get_commodities():
         f"{BASE_URL}/dev/commodities",
         headers={"Authorization": f"Bearer {API_KEY}"}
     )
-    return response.json()
-```
+    return response.json()`}
+/>
 
 ---
 

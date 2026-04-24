@@ -218,8 +218,10 @@ Returns active severe weather alerts for a location or region.
 
 ### Farm Planning Assistant
 
-```javascript title="farm-planner.js"
-async function getPlantingAdvice(lat, lon) {
+<ApiResponse
+  title="farm-planner.js"
+  language="node"
+  data={`async function getPlantingAdvice(lat, lon) {
   const [weather, forecast] = await Promise.all([
     fetchWeather(lat, lon),
     fetchForecast(lat, lon, 7),
@@ -244,8 +246,8 @@ async function getPlantingAdvice(lat, lon) {
     weeklyRainfall: totalRainfall,
     advice,
   };
-}
-```
+}`}
+/>
 
 ### SMS Weather Alerts
 

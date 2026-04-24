@@ -109,11 +109,13 @@ Returns all commodities with their current market prices.
 
 Build a web or mobile dashboard showing daily commodity prices:
 
-```javascript title="price-dashboard.js"
-async function fetchMarketPrices() {
+<ApiResponse
+  title="price-dashboard.js"
+  language="node"
+  data={`async function fetchMarketPrices() {
   const response = await fetch(
     'https://api.e-Content.com/api/v1/dev/commodities',
-    { headers: { 'Authorization': `Bearer ${API_KEY}` } }
+    { headers: { 'Authorization': \\\`Bearer \\\${API_KEY}\\\` } }
   );
 
   const commodities = await response.json();
@@ -124,15 +126,17 @@ async function fetchMarketPrices() {
   );
 
   return { cereals, all: commodities };
-}
-```
+}`}
+/>
 
 ### 2. SMS Price Alerts
 
 Send farmers automated SMS alerts when prices hit their target:
 
-```python title="sms_alerts.py"
-import requests
+<ApiResponse
+  title="sms_alerts.py"
+  language="python"
+  data={`import requests
 
 def check_and_alert(api_key, thresholds):
     """Check prices and send SMS alerts for threshold breaches."""
@@ -156,8 +160,8 @@ def check_and_alert(api_key, thresholds):
 thresholds = {
     "Maize": {"sell_above": 500},
     "Rice (Local)": {"sell_above": 700},
-}
-```
+}`}
+/>
 
 ### 3. USSD Market Info Service
 

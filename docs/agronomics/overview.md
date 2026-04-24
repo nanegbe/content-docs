@@ -120,39 +120,40 @@ Returns pest and disease identification with management recommendations.
   label="GET PEST INFO"
 />
 
-```json title="Response — 200 OK"
-{
-  "crop": "Maize",
-  "pests": [
-    {
-      "name": "Northern Leaf Blight",
-      "type": "disease",
-      "causedBy": "Exserohilum turcicum (fungus)",
-      "symptoms": [
-        "Long, elliptical grey-green lesions on leaves",
-        "Lesions turn tan as they mature",
-        "Severe cases: leaves dry up completely"
-      ],
-      "conditions": "Cool temperatures (18-27°C) with high humidity",
-      "management": {
-        "cultural": [
-          "Plant resistant varieties (Obatanpa, Mamaba)",
-          "Rotate crops — avoid continuous maize planting",
-          "Remove and destroy infected crop debris"
+<ApiResponse
+  title="200 OK"
+  data={{
+    crop: "Maize",
+    pests: [
+      {
+        name: "Northern Leaf Blight",
+        type: "disease",
+        causedBy: "Exserohilum turcicum (fungus)",
+        symptoms: [
+          "Long, elliptical grey-green lesions on leaves",
+          "Lesions turn tan as they mature",
+          "Severe cases: leaves dry up completely"
         ],
-        "chemical": [
-          "Apply Mancozeb (2.5 kg/ha) at first sign of symptoms",
-          "Follow up with Azoxystrobin if disease persists"
-        ],
-        "biological": [
-          "Use Trichoderma-based bio-fungicides as preventive treatment"
-        ]
-      },
-      "severity": "moderate"
-    }
-  ]
-}
-```
+        conditions: "Cool temperatures (18-27°C) with high humidity",
+        management: {
+          cultural: [
+            "Plant resistant varieties (Obatanpa, Mamaba)",
+            "Rotate crops — avoid continuous maize planting",
+            "Remove and destroy infected crop debris"
+          ],
+          chemical: [
+            "Apply Mancozeb (2.5 kg/ha) at first sign of symptoms",
+            "Follow up with Azoxystrobin if disease persists"
+          ],
+          biological: [
+            "Use Trichoderma-based bio-fungicides as preventive treatment"
+          ]
+        },
+        severity: "moderate"
+      }
+    ]
+  }}
+/>
 
 ---
 
@@ -178,35 +179,36 @@ Returns a seasonal planting and activity calendar for a region.
   label="GET SEASONAL CALENDAR"
 />
 
-```json title="Response — 200 OK"
-{
-  "region": "Greater Accra",
-  "year": 2026,
-  "seasons": [
-    {
-      "name": "Major Season",
-      "period": "March - July",
-      "activities": [
-        { "month": "March", "activity": "Land preparation, early planting of maize" },
-        { "month": "April", "activity": "Complete planting, first fertilizer application" },
-        { "month": "May", "activity": "Weeding, pest scouting, top-dressing" },
-        { "month": "June", "activity": "Flowering stage management, pest control" },
-        { "month": "July", "activity": "Harvesting, drying, and storage" }
-      ]
-    },
-    {
-      "name": "Minor Season",
-      "period": "September - December",
-      "activities": [
-        { "month": "September", "activity": "Land preparation, planting" },
-        { "month": "October", "activity": "Fertilizer application, weeding" },
-        { "month": "November", "activity": "Pest monitoring, crop management" },
-        { "month": "December", "activity": "Harvesting and post-harvest handling" }
-      ]
-    }
-  ]
-}
-```
+<ApiResponse
+  title="200 OK"
+  data={{
+    region: "Greater Accra",
+    year: 2026,
+    seasons: [
+      {
+        name: "Major Season",
+        period: "March - July",
+        activities: [
+          { month: "March", activity: "Land preparation, early planting of maize" },
+          { month: "April", activity: "Complete planting, first fertilizer application" },
+          { month: "May", activity: "Weeding, pest scouting, top-dressing" },
+          { month: "June", activity: "Flowering stage management, pest control" },
+          { month: "July", activity: "Harvesting, drying, and storage" }
+        ]
+      },
+      {
+        name: "Minor Season",
+        period: "September - December",
+        activities: [
+          { month: "September", activity: "Land preparation, planting" },
+          { month: "October", activity: "Fertilizer application, weeding" },
+          { month: "November", activity: "Pest monitoring, crop management" },
+          { month: "December", activity: "Harvesting and post-harvest handling" }
+        ]
+      }
+    ]
+  }}
+/>
 
 ---
 
@@ -227,8 +229,10 @@ Returns a seasonal planting and activity calendar for a region.
 
 ### Mobile Farmer Advisory App
 
-```javascript title="advisory-app.js"
-async function getDailyAdvice(farmerProfile) {
+<ApiResponse
+  title="advisory-app.js"
+  language="node"
+  data={`async function getDailyAdvice(farmerProfile) {
   const { crop, region, lat, lon } = farmerProfile;
 
   // Fetch agronomics + weather together for smart advice
@@ -248,12 +252,12 @@ async function getDailyAdvice(farmerProfile) {
     advice.push('🌡️ High temperature — increase irrigation frequency');
   }
 
-  advice.push(`📋 Current season: ${agro.season}`);
-  advice.push(`🌱 Recommended varieties: ${agro.advice.planting.varieties.join(', ')}`);
+  advice.push(\\\`📋 Current season: \\\${agro.season}\\\`);
+  advice.push(\\\`🌱 Recommended varieties: \\\${agro.advice.planting.varieties.join(', ')}\\\`);
 
   return advice;
-}
-```
+}`}
+/>
 
 ### Voice-Based Advisory (IVR)
 

@@ -123,14 +123,16 @@ Creates a new payment transaction and returns a Paystack authorization URL for t
 
 Here's a complete example of integrating the payment flow in a web application:
 
-```javascript title="payment-integration.js"
-async function subscribeToPlan(planId, amount, currency) {
+<ApiResponse
+  title="payment-integration.js"
+  language="node"
+  data={`async function subscribeToPlan(planId, amount, currency) {
   // Step 1: Initiate payment
   const response = await fetch('https://api.e-Content.com/api/v1/payment', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${userToken}`,
+      'Authorization': \\\`Bearer \\\${userToken}\\\`,
     },
     body: JSON.stringify({
       planId,
@@ -150,8 +152,8 @@ async function subscribeToPlan(planId, amount, currency) {
 }
 
 // Usage
-subscribeToPlan('plan-uuid', 29.99, 'GHS');
-```
+subscribeToPlan('plan-uuid', 29.99, 'GHS');`}
+/>
 
 :::tip Callback URL
 Configure your Paystack dashboard callback URL to redirect users back to your application after payment. The API will handle subscription activation automatically via webhooks.

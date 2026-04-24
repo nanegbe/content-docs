@@ -107,8 +107,10 @@ Receives and processes webhook events from Paystack such as `charge.success` and
 
 Paystack signs every webhook payload using HMAC SHA512 with your secret key. Here's how to verify it:
 
-```javascript title="verify-signature.js"
-const crypto = require('crypto');
+<ApiResponse
+  title="verify-signature.js"
+  language="node"
+  data={`const crypto = require('crypto');
 
 function verifyPaystackSignature(requestBody, signatureHeader, secretKey) {
   const hash = crypto
@@ -129,11 +131,11 @@ app.post('/api/v1/webhook/paystack', (req, res) => {
 
   // Process the event
   const { event, data } = req.body;
-  console.log(`Received event: ${event}`, data);
+  console.log(\\\`Received event: \\\${event}\\\`, data);
 
   res.status(200).json({ received: true });
-});
-```
+});`}
+/>
 
 ---
 
@@ -154,16 +156,18 @@ app.post('/api/v1/webhook/paystack', (req, res) => {
 
 Use a tunneling tool like [ngrok](https://ngrok.com/) or [localtunnel](https://localtunnel.me/) to expose your local server for testing:
 
-```bash
-# Install ngrok
+<ApiResponse
+  title="Testing with ngrok"
+  language="bash"
+  data={`# Install ngrok
 npm install -g ngrok
 
 # Start your local server
 npm run start:dev
 
 # Expose your local webhook endpoint
-ngrok http 3000
-```
+ngrok http 3000`}
+/>
 
 Then configure the ngrok URL (e.g., `https://abc123.ngrok.io/api/v1/webhook/paystack`) as your webhook URL in the Paystack dashboard.
 

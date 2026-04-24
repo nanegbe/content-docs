@@ -79,8 +79,9 @@ Configure your monitoring tool to:
 
 Use the health endpoint in container orchestration:
 
-```yaml title="docker-compose.yml"
-services:
+<ApiResponse
+  title="docker-compose.yml"
+  data={`services:
   e-Content-api:
     image: e-Content/api:latest
     healthcheck:
@@ -88,11 +89,12 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
-```
+      start_period: 40s`}
+/>
 
-```yaml title="k8s-deployment.yml"
-livenessProbe:
+<ApiResponse
+  title="k8s-deployment.yml"
+  data={`livenessProbe:
   httpGet:
     path: /api/v1/health
     port: 3000
@@ -103,13 +105,15 @@ readinessProbe:
     path: /api/v1/health
     port: 3000
   initialDelaySeconds: 5
-  periodSeconds: 10
-```
+  periodSeconds: 10`}
+/>
 
 ### Shell Script
 
-```bash title="health-check.sh"
-#!/bin/bash
+<ApiResponse
+  title="health-check.sh"
+  language="bash"
+  data={`#!/bin/bash
 
 HEALTH_URL="https://api.e-Content.com/api/v1/health"
 
@@ -121,8 +125,8 @@ if [ "$response" = "200" ]; then
 else
   echo "❌ API is down (HTTP $response)"
   exit 1
-fi
-```
+fi`}
+/>
 
 ---
 

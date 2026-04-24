@@ -108,14 +108,16 @@ Retrieves all available commodities with their current market prices.
 
 ### JavaScript — Displaying Market Prices
 
-```javascript title="market-prices.js"
-const API_KEY = process.env.AGRI_CONTENT_API_KEY;
+<ApiResponse
+  title="market-prices.js"
+  language="node"
+  data={`const API_KEY = process.env.AGRI_CONTENT_API_KEY;
 
 async function displayMarketPrices() {
   const response = await fetch(
     'https://api.e-Content.com/api/v1/dev/commodities',
     {
-      headers: { 'Authorization': `Bearer ${API_KEY}` },
+      headers: { 'Authorization': \\\`Bearer \\\${API_KEY}\\\` },
     }
   );
 
@@ -125,21 +127,23 @@ async function displayMarketPrices() {
   commodities.sort((a, b) => b.price - a.price);
 
   console.log('═══════════════════════════════════');
-  console.log('  📊 Today\'s Market Prices');
+  console.log('  📊 Today\\'s Market Prices');
   console.log('═══════════════════════════════════');
 
   commodities.forEach(({ name, price, unit }) => {
-    console.log(`  ${name.padEnd(20)} GHS ${price.toFixed(2)}/${unit}`);
+    console.log(\\\`  \\\${name.padEnd(20)} GHS \\\${price.toFixed(2)}/\\\${unit}\\\`);
   });
 }
 
-displayMarketPrices();
-```
+displayMarketPrices();`}
+/>
 
 ### Python — Price Alert Service
 
-```python title="price_alerts.py"
-import os
+<ApiResponse
+  title="price_alerts.py"
+  language="python"
+  data={`import os
 import requests
 
 API_KEY = os.environ["AGRI_CONTENT_API_KEY"]
@@ -175,8 +179,8 @@ alerts = check_price_alerts(thresholds)
 for alert in alerts:
     print(f"⚠️  {alert['commodity']} has reached "
           f"GHS {alert['current_price']}/{alert['unit']} "
-          f"(threshold: GHS {alert['threshold']})")
-```
+          f"(threshold: GHS {alert['threshold']})")`}
+/>
 
 ---
 
