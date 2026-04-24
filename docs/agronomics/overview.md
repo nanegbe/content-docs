@@ -6,6 +6,7 @@ description: Deliver crop-specific agronomic advice, pest management tips, and b
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
 import ApiResponse from '@site/src/components/ApiResponse';
+import InfoBlock from '@site/src/components/InfoBlock';
 
 # Agronomics API
 
@@ -261,8 +262,8 @@ Returns a seasonal planting and activity calendar for a region.
 
 ### Voice-Based Advisory (IVR)
 
-```
-🔊 Welcome to Farm Advisory.
+<InfoBlock title="IVR SYSTEM">
+{`🔊 Welcome to Farm Advisory.
 
 Press 1 for Maize advice
 Press 2 for Rice advice
@@ -277,8 +278,8 @@ centimeters. Recommended varieties for your region
 include Obatanpa and Mamaba.
 
 Current weather shows high humidity. Please scout
-your fields for signs of leaf blight."
-```
+your fields for signs of leaf blight."`}
+</InfoBlock>
 
 ---
 

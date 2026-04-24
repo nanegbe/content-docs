@@ -5,6 +5,7 @@ description: API reference for webhook endpoints — receive real-time event not
 ---
 
 import ApiResponse from '@site/src/components/ApiResponse';
+import InfoBlock from '@site/src/components/InfoBlock';
 
 # Webhooks
 
@@ -20,13 +21,13 @@ Webhooks allow external services to notify the E-Content API when events occur (
 
 ### How It Works
 
-```
-1. An event occurs in Paystack (e.g., successful payment)
+<InfoBlock title="WEBHOOK FLOW">
+{`1. An event occurs in Paystack (e.g., successful payment)
 2. Paystack sends an HTTP POST request to your webhook URL
 3. The API verifies the request signature
 4. The API processes the event (e.g., activates subscription)
-5. The API returns 200 OK to acknowledge receipt
-```
+5. The API returns 200 OK to acknowledge receipt`}
+</InfoBlock>
 
 :::warning Signature Verification
 Every incoming webhook request is verified using an HMAC SHA512 signature. Requests with invalid or missing signatures are rejected. **Never skip signature verification** in your own webhook handlers.

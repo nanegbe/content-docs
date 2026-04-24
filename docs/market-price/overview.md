@@ -6,6 +6,7 @@ description: Access real-time agricultural commodity market prices across region
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
 import ApiResponse from '@site/src/components/ApiResponse';
+import InfoBlock from '@site/src/components/InfoBlock';
 
 # Market Price API
 
@@ -167,8 +168,8 @@ thresholds = {
 
 Serve market prices through USSD for farmers without smartphones:
 
-```
-*123*1# → Market Prices
+<InfoBlock title="USSD INTERFACE">
+{`*123*1# → Market Prices
   1. Cereals & Grains
   2. Root & Tubers
   3. Vegetables
@@ -178,8 +179,8 @@ Serve market prices through USSD for farmers without smartphones:
 Cereals & Grains (Today):
 - Maize: GHS 450/kg
 - Rice: GHS 680/kg
-- Millet: GHS 320/kg
-```
+- Millet: GHS 320/kg`}
+</InfoBlock>
 
 ---
 

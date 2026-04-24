@@ -6,6 +6,7 @@ description: API reference for initiating payments and processing transactions w
 
 import ApiCodeToggler from '@site/src/components/ApiCodeToggler';
 import ApiResponse from '@site/src/components/ApiResponse';
+import InfoBlock from '@site/src/components/InfoBlock';
 
 # Payments
 
@@ -19,30 +20,28 @@ Process payments for subscription plans using the integrated Paystack payment ga
 
 The payment process follows a redirect-based flow:
 
-```
-1. Client initiates payment via API
+<InfoBlock title="PAYMENT FLOW">
+{`1. Client initiates payment via API
 2. API creates a Paystack transaction
 3. API returns an authorization URL
 4. User completes payment on Paystack checkout page
 5. Paystack sends a webhook notification on success
-6. API activates the user's subscription
-```
+6. API activates the user's subscription`}
+</InfoBlock>
 
-```mermaid
-sequenceDiagram
-    participant Client
-    participant API as E-Content API
-    participant PS as Paystack
-
-    Client->>API: POST /api/v1/payment
-    API->>PS: Create transaction
-    PS-->>API: Authorization URL
-    API-->>Client: { authorizationUrl, reference }
-    Client->>PS: Redirect to checkout
-    PS-->>Client: Payment completed
-    PS->>API: Webhook: charge.success
-    API->>API: Activate subscription
-```
+<InfoBlock title="SEQUENCE DIAGRAM">
+{`Client          API              Paystack
+  |              |                  |
+  |--POST /payment->|                  |
+  |              |--Create tx------->|
+  |              |<--Auth URL--------|
+  |<--Auth URL---|                  |
+  |--------------|->Redirect to checkout|
+  |              |                  |
+  |              |<--Webhook--------|
+  |              |  charge.success  |
+  |              |  Activate sub    |`}
+</InfoBlock>
 
 ---
 
