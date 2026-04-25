@@ -1,4 +1,4 @@
-export type TerminalLanguage = 'curl' | 'python' | 'node' | 'php' | 'bash';
+export type TerminalLanguage = 'curl' | 'python' | 'node' | 'php' | 'bash' | 'json';
 
 export function highlight(code: string, lang: TerminalLanguage): string {
     // Escape HTML special characters
@@ -29,6 +29,15 @@ export function highlight(code: string, lang: TerminalLanguage): string {
         html = html.replace(/\b(php|curl_init|curl_setopt_array|curl_exec|curl_close|echo|CURLOPT_URL|CURLOPT_RETURNTRANSFER|CURLOPT_CUSTOMREQUEST|CURLOPT_HTTPHEADER|CURLOPT_POSTFIELDS)\b/g, '<span class="token keyword">$1</span>');
         html = html.replace(/(&quot;.*?&quot;|&#039;.*?&#039;)/g, '<span class="token string">$1</span>');
         html = html.replace(/(\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)/g, '<span class="token variable">$1</span>');
+    } else if (lang === 'json') {
+        // JSON keys
+        html = html.replace(/(&quot;[^&]+&quot;)(?=\s*:)/g, '<span class="token property">$1</span>');
+        // JSON string values
+        html = html.replace(/:\s*(&quot;.*?&quot;)/g, ': <span class="token string">$1</span>');
+        // JSON numbers
+        html = html.replace(/:\s*(-?\d+\.?\d*(?:[eE][+-]?\d+)?)/g, ': <span class="token number">$1</span>');
+        // JSON booleans and null
+        html = html.replace(/:\s*\b(true|false|null)\b/g, ': <span class="token keyword">$1</span>');
     }
 
     return html;
