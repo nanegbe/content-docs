@@ -58,7 +58,7 @@ Fetch the current weather conditions for a location:
 />
 
 :::info Authentication Required
-Weather endpoints require API Key authentication. See the [Authentication guide](../getting-started/authentication) to set up your credentials.
+Weather endpoints require API Key authentication. See the [Authentication guide](../api/authentication) to set up your credentials.
 :::
 
 ---
@@ -279,4 +279,4 @@ Reply STOP to opt out.
 
 - **[Market Prices →](../market-price/overview)** — Combine weather with pricing data
 - **[Agronomic Advice →](../agronomics/overview)** — Weather-informed crop management
-- **[Authentication →](../getting-started/authentication)** — Set up API access
+- **[Authentication →](../api/authentication)** — Set up API access

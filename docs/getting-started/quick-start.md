@@ -163,7 +163,7 @@ Verify the API is running with the health check endpoint (no auth required):
 
 You've successfully registered, authenticated, and made your first API call! Here's where to go from here:
 
-- **[Authentication Guide →](./authentication)** — Deep dive into JWT tokens and API keys
+- **[Authentication Guide →](../api/authentication)** — Deep dive into JWT tokens and API keys
 - **[Plans & Payments →](../api/plans)** — Set up subscription plans for your users
 - **[Webhooks →](../api/webhooks)** — Receive real-time payment notifications
 - **[Full API Reference →](../api/authentication)** — Explore every endpoint in detail

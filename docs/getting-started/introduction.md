@@ -99,5 +99,5 @@ API requests are subject to rate limits based on your subscription plan. Rate li
 Ready to start building? Follow these guides:
 
 1. **[Quick Start →](./quick-start)** — Make your first API call in under 5 minutes
-2. **[Authentication →](./authentication)** — Set up JWT tokens and API keys
+2. **[Authentication →](../api/authentication)** — Set up JWT tokens and API keys
 3. **[API Reference →](../api/authentication)** — Explore all available endpoints

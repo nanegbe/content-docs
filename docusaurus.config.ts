@@ -104,7 +104,7 @@ const config: Config = {
             },
             {
               label: 'Authentication',
-              to: '/docs/getting-started/authentication',
+              to: '/docs/api/authentication',
             },
           ],
         },

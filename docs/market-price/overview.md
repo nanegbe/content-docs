@@ -59,7 +59,7 @@ Fetch all available commodity prices with a single API call:
 />
 
 :::info Authentication Required
-Market price endpoints require API Key authentication. See the [Authentication guide](../getting-started/authentication) to set up your credentials.
+Market price endpoints require API Key authentication. See the [Authentication guide](../api/authentication) to set up your credentials.
 :::
 
 ---
@@ -198,6 +198,6 @@ Market price requests are subject to rate limits based on your subscription plan
 
 ## Next Steps
 
-- **[Authentication →](../getting-started/authentication)** — Set up API key access
+- **[Authentication →](../api/authentication)** — Set up API key access
 - **[Weather Updates →](../weather/overview)** — Combine price data with weather forecasts
 - **[Agronomic Advice →](../agronomics/overview)** — Pair pricing with crop management tips

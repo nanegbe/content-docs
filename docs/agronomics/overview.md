@@ -64,7 +64,7 @@ Fetch agronomic advice for a specific crop:
 />
 
 :::info Authentication Required
-Agronomics endpoints require API Key authentication. See the [Authentication guide](../getting-started/authentication) to set up your credentials.
+Agronomics endpoints require API Key authentication. See the [Authentication guide](../api/authentication) to set up your credentials.
 :::
 
 ---
@@ -297,4 +297,4 @@ your fields for signs of leaf blight."`}
 
 - **[Market Prices →](../market-price/overview)** — Combine advice with pricing intelligence
 - **[Weather →](../weather/overview)** — Weather-informed crop management
-- **[Authentication →](../getting-started/authentication)** — Set up API access
+- **[Authentication →](../api/authentication)** — Set up API access

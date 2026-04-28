@@ -84,5 +84,5 @@ The seed process creates the following sample data:
 
 ## Related
 
-- **[Commodities →](./commodities)** — Query seeded commodity data
+- **[Commodities →](../market-price/commodities)** — Query seeded commodity data
 - **[Plans →](./plans)** — View seeded subscription plans

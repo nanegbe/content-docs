@@ -166,5 +166,5 @@ def get_commodities():
 
 ## Related
 
-- **[Authentication Guide →](../getting-started/authentication)** — Full authentication overview
-- **[Commodities →](./commodities)** — Query commodity data using your API key
+- **[Authentication Guide →](./authentication)** — Full authentication overview
+- **[Commodities →](../market-price/commodities)** — Query commodity data using your API key

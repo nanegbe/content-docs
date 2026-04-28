@@ -198,5 +198,5 @@ for alert in alerts:
 
 ## Related
 
-- **[API Keys →](./api-keys)** — Generate an API key to access this endpoint
-- **[Plans →](./plans)** — Subscription tiers determine rate limits and data access
+- **[API Keys →](../api/api-keys)** — Generate an API key to access this endpoint
+- **[Plans →](../api/plans)** — Subscription tiers determine rate limits and data access
