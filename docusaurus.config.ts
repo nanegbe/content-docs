@@ -81,11 +81,11 @@ const config: Config = {
           label: 'Agronomics',
           position: 'left',
         },
-        {
-          href: 'https://github.com/e-Content',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/e-Content',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
