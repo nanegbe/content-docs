@@ -136,10 +136,10 @@ const config: Config = {
               label: 'Webhooks',
               to: '/docs/api/webhooks',
             },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/e-Content',
-            },
+            // {
+            //   label: 'GitHub',
+            //   href: 'https://github.com/e-Content',
+            // },
           ],
         },
       ],
